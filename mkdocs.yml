@@ -1,0 +1,68 @@
+site_name: HylaFAX Enterprise Guide
+nav:
+    - Home: 'quickstart/index.md'
+    - 'Quickstart Guide': 
+      - 'Getting Started': 'quickstart/appliance-installation.md'
+      - 'Installing the iso': 'quickstart/installing-the-iso.md'
+      - 'Activate License': 'quickstart/activating-the-license.md'
+      - 'Configure Networking': 'quickstart/configure-networking.md'
+      - 'Configuring Mail': 'quickstart/configuring-mail.md'
+      - 'Enabling iFAX Support Access': 'quickstart/enabling-iFAX-support-access.md'
+      - 'Configuring Telco Connections': 'quickstart/configuring-telco-connections.md'
+      - 'Configure Dialing Options': 'quickstart/configure-dialing-options.md'
+      - 'Web Interface Startup': 'quickstart/web-interface-start-up.md'
+      - 'Web Interface Admin Basics': 'quickstart/web-interface-admin-basics.md'
+      - 'Web Interface DID Routes': 'quickstart/web-interface-DID-routes.md'
+      - 'Notes': 'quickstart/notes.md'
+
+    - 'Enterprise Guide': 
+      - 'Overview': 'master/overview.md'
+      - 'License Activation': 'master/license-activation.md'
+      - 'Inbound FAX Routing': 'master/inbound-fax-routing.md'
+      - 'Sending Faxes': 'master/sending-faxes.md'
+      - 'Client Access': 'master/client-access.md'
+      - 'Email Templates': 'master/email-templates.md'
+      - 'Firewall Configuration': 'master/firewall-configuration.md'
+      - 'Cron Jobs': 'master/cron-jobs.md'
+      - 'Troubleshooting and FAQ': 'master/troubleshooting.md'
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+
+markdown_extensions:
+
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
