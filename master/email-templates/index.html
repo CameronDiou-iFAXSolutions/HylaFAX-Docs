@@ -1,0 +1,851 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.1">
+    
+    
+      
+        <title>Email Templates - HylaFAX Enterprise Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.23b6d78a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#email-templates" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="HylaFAX Enterprise Guide" class="md-header__button md-logo" aria-label="HylaFAX Enterprise Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HylaFAX Enterprise Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Email Templates
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../quickstart/" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/appliance-installation/" class="md-tabs__link">
+        Quickstart Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../overview/" class="md-tabs__link md-tabs__link--active">
+        Enterprise Guide
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HylaFAX Enterprise Guide" class="md-nav__button md-logo" aria-label="HylaFAX Enterprise Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    HylaFAX Enterprise Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Quickstart Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Quickstart Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quickstart Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/appliance-installation/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/installing-the-iso/" class="md-nav__link">
+        Installing the iso
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/activating-the-license/" class="md-nav__link">
+        Activate License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configure-networking/" class="md-nav__link">
+        Configure Networking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configuring-mail/" class="md-nav__link">
+        Configuring Mail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/enabling-iFAX-support-access/" class="md-nav__link">
+        Enabling iFAX Support Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configuring-telco-connections/" class="md-nav__link">
+        Configuring Telco Connections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configure-dialing-options/" class="md-nav__link">
+        Configure Dialing Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/web-interface-start-up/" class="md-nav__link">
+        Web Interface Startup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/web-interface-admin-basics/" class="md-nav__link">
+        Web Interface Admin Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/web-interface-DID-routes/" class="md-nav__link">
+        Web Interface DID Routes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/notes/" class="md-nav__link">
+        Notes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Enterprise Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Enterprise Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Enterprise Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license-activation/" class="md-nav__link">
+        License Activation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inbound-fax-routing/" class="md-nav__link">
+        Inbound FAX Routing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sending-faxes/" class="md-nav__link">
+        Sending Faxes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-access/" class="md-nav__link">
+        Client Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Email Templates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Email Templates
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#html-based-templates" class="md-nav__link">
+    HTML-based Templates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replace-hylafax-agent" class="md-nav__link">
+    Replace HylaFAX Agent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-from-email" class="md-nav__link">
+    Change From Email
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-success-notifications-to-faxmaster" class="md-nav__link">
+    Disable Success Notifications to FaxMaster
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firewall-configuration/" class="md-nav__link">
+        Firewall Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cron-jobs/" class="md-nav__link">
+        Cron Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting and FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#html-based-templates" class="md-nav__link">
+    HTML-based Templates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replace-hylafax-agent" class="md-nav__link">
+    Replace HylaFAX Agent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-from-email" class="md-nav__link">
+    Change From Email
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-success-notifications-to-faxmaster" class="md-nav__link">
+    Disable Success Notifications to FaxMaster
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="email-templates">Email Templates<a class="headerlink" href="#email-templates" title="Permanent link">&para;</a></h1>
+<p>The email templates are in <code>/var/spool/hylafax/etc/templates</code>, with several languages available. When modifying templates, the best practice is to copy the entire language's directory to a new directory, so that it isn't affected by upgrades. In this example, we make a copy of the English templates:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /var/spool/hylafax/etc/templates
+cp -a en en-modified
+<span class="nb">cd</span> en-modified
+</code></pre></div>
+<p>Edit the templates in that new directory.</p>
+<p>Then, configure the system to use your templates:</p>
+<p>For incoming faxes, edit <code>/var/spool/hylafax/etc/FaxDispatch</code>
+For notification on outgoing faxes, edit <code>/var/spool/hylafax/etc/FaxNotify</code></p>
+<p>In each file, you want to set the variable <strong><em>TEMPLATE</em></strong> to the directory with your custom templates. (This line already exists in <code>FaxNotify</code>; it has to be specifically added to <code>FaxDispatch</code>.) Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">TEMPLATE</span><span class="o">=</span>en-modified
+</code></pre></div>
+<p>Once you save the file, your email templates will be used, with no restarts necessary.</p>
+<p>FaxDispatch and FaxNotify also control the <code>From:</code> address that's set in those templates. To change that, edit or set the variable FROMADDR.</p>
+<h2 id="html-based-templates">HTML-based Templates<a class="headerlink" href="#html-based-templates" title="Permanent link">&para;</a></h2>
+<p>You can easily switch to the HTML templates and customize them for your organization by following these steps:</p>
+<p>Create a copy of the <strong><em>html-sample1</em></strong> template directory in <code>/var/spool/hylafax/etc/templates/</code> called <strong><em>custom-html</em></strong>:</p>
+<div class="highlight"><pre><span></span><code>cp -a /var/spool/hylafax/etc/templates/<span class="o">{</span>html-sample1,custom-html<span class="o">}</span>
+</code></pre></div>
+<p>Add the following to your <code>etc/FaxDispatch</code> and <code>etc/FaxNotify</code>:
+<div class="highlight"><pre><span></span><code><span class="nv">TEMPLATE</span><span class="o">=</span>custom-html
+</code></pre></div>
+Edit the font-family in the <code>css.inc</code> file to suit your needs.</p>
+<p>Once you’ve saved the changes to <code>etc/FaxDispatch</code> and <code>etc/FaxNotify</code>, the new templates will be used the next time you receive and send a fax.</p>
+<h2 id="replace-hylafax-agent">Replace HylaFAX Agent<a class="headerlink" href="#replace-hylafax-agent" title="Permanent link">&para;</a></h2>
+<p>You can easily replace all occurrences of "HylaFAX  Agent" in the email templates with the following command:</p>
+<div class="highlight"><pre><span></span><code>sed -i -e <span class="s1">&#39;s/HylaFAX Agent/My Fax Service/&#39;</span> /var/spool/hylafax/etc/templates/custom/*.txt
+</code></pre></div>
+<h2 id="change-from-email">Change From Email<a class="headerlink" href="#change-from-email" title="Permanent link">&para;</a></h2>
+<p>To change the email address that sends the email notifications for sent and received faxes, edit <code>/var/spool/hylafax/etc/FaxDispatch</code> and <code>FaxNotify</code> and set:</p>
+<p><div class="highlight"><pre><span></span><code><span class="nv">FROMADDR</span><span class="o">=</span>faxserver@example.com
+</code></pre></div>
+Once you save your changes, they will be applied automatically to the next email notifications.</p>
+<h2 id="disable-success-notifications-to-faxmaster">Disable Success Notifications to FaxMaster<a class="headerlink" href="#disable-success-notifications-to-faxmaster" title="Permanent link">&para;</a></h2>
+<p>To receive notifications for failed fax transmissions only, set the following in <code>/var/spool/hylafax/etc/FaxDispatch</code> and <code>FaxNotify</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">NOTIFY_FAXMASTER</span><span class="o">=</span>errors
+</code></pre></div>
+<p>To disable all fax transmission notifications to <strong><em>FaxMaster</em></strong>, use the following instead:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">NOTIFY_FAXMASTER</span><span class="o">=</span>never
+</code></pre></div>
+<p>Your changes are applied automatically.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../client-access/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Client Access" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Client Access
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../firewall-configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Firewall Configuration" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Firewall Configuration
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.c7dec7e7.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.da79ceb7.min.js"></script>
+      
+    
+  </body>
+</html>

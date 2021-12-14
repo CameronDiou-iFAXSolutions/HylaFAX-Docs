@@ -1,0 +1,840 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.1">
+    
+    
+      
+        <title>Cron Jobs - HylaFAX Enterprise Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.23b6d78a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cron-jobs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="HylaFAX Enterprise Guide" class="md-header__button md-logo" aria-label="HylaFAX Enterprise Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HylaFAX Enterprise Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cron Jobs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../quickstart/" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/appliance-installation/" class="md-tabs__link">
+        Quickstart Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../overview/" class="md-tabs__link md-tabs__link--active">
+        Enterprise Guide
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HylaFAX Enterprise Guide" class="md-nav__button md-logo" aria-label="HylaFAX Enterprise Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    HylaFAX Enterprise Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Quickstart Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Quickstart Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quickstart Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/appliance-installation/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/installing-the-iso/" class="md-nav__link">
+        Installing the iso
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/activating-the-license/" class="md-nav__link">
+        Activate License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configure-networking/" class="md-nav__link">
+        Configure Networking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configuring-mail/" class="md-nav__link">
+        Configuring Mail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/enabling-iFAX-support-access/" class="md-nav__link">
+        Enabling iFAX Support Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configuring-telco-connections/" class="md-nav__link">
+        Configuring Telco Connections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configure-dialing-options/" class="md-nav__link">
+        Configure Dialing Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/web-interface-start-up/" class="md-nav__link">
+        Web Interface Startup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/web-interface-admin-basics/" class="md-nav__link">
+        Web Interface Admin Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/web-interface-DID-routes/" class="md-nav__link">
+        Web Interface DID Routes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/notes/" class="md-nav__link">
+        Notes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Enterprise Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Enterprise Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Enterprise Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license-activation/" class="md-nav__link">
+        License Activation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inbound-fax-routing/" class="md-nav__link">
+        Inbound FAX Routing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sending-faxes/" class="md-nav__link">
+        Sending Faxes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-access/" class="md-nav__link">
+        Client Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../email-templates/" class="md-nav__link">
+        Email Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firewall-configuration/" class="md-nav__link">
+        Firewall Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Cron Jobs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Cron Jobs
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#etccrondailyhylafax" class="md-nav__link">
+    /etc/cron.daily/hylafax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etccronhourlyhylafax" class="md-nav__link">
+    /etc/cron.hourly/hylafax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etccrondhylafax-enterprise-web" class="md-nav__link">
+    /etc/cron.d/hylafax-enterprise-web
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting and FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#etccrondailyhylafax" class="md-nav__link">
+    /etc/cron.daily/hylafax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etccronhourlyhylafax" class="md-nav__link">
+    /etc/cron.hourly/hylafax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etccrondhylafax-enterprise-web" class="md-nav__link">
+    /etc/cron.d/hylafax-enterprise-web
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="cron-jobs">Cron Jobs<a class="headerlink" href="#cron-jobs" title="Permanent link">&para;</a></h1>
+<p>The HylaFAX Enterprise packages install the following cron jobs:</p>
+<h2 id="etccrondailyhylafax">/etc/cron.daily/hylafax<a class="headerlink" href="#etccrondailyhylafax" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+
+<span class="c1"># Source HylaFAX EE wrapper</span>
+<span class="k">if</span> <span class="o">[</span> -f /etc/hylafax/wrapper.sh <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+  . /etc/hylafax/wrapper.sh
+<span class="k">fi</span>
+
+/usr/sbin/faxcron <span class="p">|</span> mail -s <span class="s2">&quot;HylaFAX Usage Report&quot;</span> faxmaster
+
+<span class="nb">exit</span> <span class="m">0</span>
+</code></pre></div>
+<p>Routine housecleaning in the <code>recvq/</code> directory is performed by HylaFAX’s <strong><em>faxcron</em></strong> program, which is executed daily from the <code>/etc/cron.daily/</code> hylafax crontab.  For example, if you’re looking to change the expiration time for received faxes, you’ll need to edit the faxcron command in that crontab and to use the <strong><em>-rcv</em></strong> option along with the desired number of days.</p>
+<h2 id="etccronhourlyhylafax">/etc/cron.hourly/hylafax<a class="headerlink" href="#etccronhourlyhylafax" title="Permanent link">&para;</a></h2>
+<p><div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+
+<span class="c1"># Source HylaFAX EE wrapper</span>
+<span class="k">if</span> <span class="o">[</span> -f /etc/hylafax/wrapper.sh <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+  . /etc/hylafax/wrapper.sh
+<span class="k">fi</span>
+
+/usr/sbin/faxqclean
+
+<span class="nb">exit</span> <span class="m">0</span>
+</code></pre></div>
+Completed jobs (whether they were sent successfully or not) are stored in the HylaFAX <code>doneq/</code> directory, and there is a crontab that performs routine maintenance in that directory called <strong><em>faxqclean</em></strong>, which is executed from <code>/etc/cron.hourly/hylafax</code>. You can use the <strong><em>-j</em></strong> option to specify the job age threshold (in seconds) that controls how long jobs may reside in the <code>doneq/</code> directory before being
+removed.</p>
+<h2 id="etccrondhylafax-enterprise-web">/etc/cron.d/hylafax-enterprise-web<a class="headerlink" href="#etccrondhylafax-enterprise-web" title="Permanent link">&para;</a></h2>
+<p><div class="highlight"><pre><span></span><code><span class="m">0</span> <span class="m">0</span> * * * uucp  /var/www/fax/includes/webfaxcron.php -t <span class="m">0</span> -i <span class="m">30</span> &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</code></pre></div>
+usage: webfaxcron.php -i num-days -d num-days -t num-days
+options:</p>
+<div class="highlight"><pre><span></span><code>-i num-days prune Inbox of faxes older than number of days
+-d num-days delete faxes from Inbox/Archive that are older than number of days
+-t num-days clean web temporary directory of files older than number of days
+</code></pre></div>
+<p>For example, if you want to Archive all faxes older than 5 days, and remove archived faxes older than 30 days, you might run:</p>
+<div class="highlight"><pre><span></span><code>/var/www/fax/includes/webfaxcron.php -t <span class="m">1</span> -i <span class="m">5</span> -d <span class="m">30</span>
+</code></pre></div>
+<p>The webfaxcron script should already be scheduled in the <code>/etc/cron.d/hylafax-enterprise-web</code> crontab to clean the temp files in <code>/var/www/fax/tmp/</code> at midnight every night.</p>
+<p>Deletions from the archive are noted in the web interface SysLog: for each removed fax there's an entry:
+<div class="highlight"><pre><span></span><code>prune_archive&gt; deleting faxid <span class="s1">&#39;#&#39;</span>
+</code></pre></div></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../firewall-configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Firewall Configuration" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Firewall Configuration
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="Next: Troubleshooting and FAQ" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Troubleshooting and FAQ
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.c7dec7e7.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.da79ceb7.min.js"></script>
+      
+    
+  </body>
+</html>

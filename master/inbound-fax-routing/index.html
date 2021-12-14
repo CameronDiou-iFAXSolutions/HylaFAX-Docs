@@ -1,0 +1,970 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.1">
+    
+    
+      
+        <title>Inbound FAX Routing - HylaFAX Enterprise Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.23b6d78a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuring-inbound-fax-routing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="HylaFAX Enterprise Guide" class="md-header__button md-logo" aria-label="HylaFAX Enterprise Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HylaFAX Enterprise Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Inbound FAX Routing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../quickstart/" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/appliance-installation/" class="md-tabs__link">
+        Quickstart Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../overview/" class="md-tabs__link md-tabs__link--active">
+        Enterprise Guide
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HylaFAX Enterprise Guide" class="md-nav__button md-logo" aria-label="HylaFAX Enterprise Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    HylaFAX Enterprise Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Quickstart Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Quickstart Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quickstart Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/appliance-installation/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/installing-the-iso/" class="md-nav__link">
+        Installing the iso
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/activating-the-license/" class="md-nav__link">
+        Activate License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configure-networking/" class="md-nav__link">
+        Configure Networking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configuring-mail/" class="md-nav__link">
+        Configuring Mail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/enabling-iFAX-support-access/" class="md-nav__link">
+        Enabling iFAX Support Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configuring-telco-connections/" class="md-nav__link">
+        Configuring Telco Connections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configure-dialing-options/" class="md-nav__link">
+        Configure Dialing Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/web-interface-start-up/" class="md-nav__link">
+        Web Interface Startup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/web-interface-admin-basics/" class="md-nav__link">
+        Web Interface Admin Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/web-interface-DID-routes/" class="md-nav__link">
+        Web Interface DID Routes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/notes/" class="md-nav__link">
+        Notes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Enterprise Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Enterprise Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Enterprise Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license-activation/" class="md-nav__link">
+        License Activation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Inbound FAX Routing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Inbound FAX Routing
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web-interface-did-routes" class="md-nav__link">
+    Web Interface DID Routes:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fax-dispatch" class="md-nav__link">
+    Fax Dispatch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fax-to-email-using-faxdispatch" class="md-nav__link">
+    Fax to Email using FaxDispatch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copying-the-fax-to-a-local-directory" class="md-nav__link">
+    Copying the FAX to a local directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-ldapad" class="md-nav__link">
+    Using LDAP/AD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printing-received-faxes" class="md-nav__link">
+    Printing Received Faxes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#barcode-decoding" class="md-nav__link">
+    Barcode Decoding
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sending-faxes/" class="md-nav__link">
+        Sending Faxes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-access/" class="md-nav__link">
+        Client Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../email-templates/" class="md-nav__link">
+        Email Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firewall-configuration/" class="md-nav__link">
+        Firewall Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cron-jobs/" class="md-nav__link">
+        Cron Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting and FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web-interface-did-routes" class="md-nav__link">
+    Web Interface DID Routes:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fax-dispatch" class="md-nav__link">
+    Fax Dispatch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fax-to-email-using-faxdispatch" class="md-nav__link">
+    Fax to Email using FaxDispatch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copying-the-fax-to-a-local-directory" class="md-nav__link">
+    Copying the FAX to a local directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-ldapad" class="md-nav__link">
+    Using LDAP/AD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printing-received-faxes" class="md-nav__link">
+    Printing Received Faxes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#barcode-decoding" class="md-nav__link">
+    Barcode Decoding
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="configuring-inbound-fax-routing">Configuring Inbound FAX Routing<a class="headerlink" href="#configuring-inbound-fax-routing" title="Permanent link">&para;</a></h1>
+<h2 id="web-interface-did-routes">Web Interface DID Routes:<a class="headerlink" href="#web-interface-did-routes" title="Permanent link">&para;</a></h2>
+<p>Inbound FAX routing is easily configured the "Configure DID/DTMF Routing" section of the Admin Settings area in the Web Interface.</p>
+<p><img alt="Screenshot" src="../img/screenshot18.png" /></p>
+<p>By default, there are three DID groups configured. They are <code>1234</code>, <code>1321</code>, and <code>4321</code>. If a fax is sent to a non-existent DID group, then it will be stored in the “Catch-All” group.</p>
+<p>The <strong><em>admin</em></strong> account has access to view all faxes received in every DID group including the “Catch-All” group. </p>
+<p>The <strong><em>tech</em></strong> account only has access to view the faxes received on the <code>1321</code> and <code>4321</code> DID groups.  The <strong><em>user</em></strong> account only has access to the <code>1234</code> DID group. </p>
+<p>Therefore, if you send a fax to <code>4321</code>, the users <strong><em>admin</em></strong> and <strong><em>tech</em></strong> will see the fax in the Inbox while <strong><em>user</em></strong> will not. </p>
+<p>If you send a fax to <code>2175</code>, only <strong><em>admin</em></strong> will be able to view the fax because it will be stored in the “Catch-All” group.</p>
+<p>You can create new DID groups and adjust user permissions in the Admin Settings area.</p>
+<h2 id="fax-dispatch">Fax Dispatch<a class="headerlink" href="#fax-dispatch" title="Permanent link">&para;</a></h2>
+<p>If you'd like to perform an action (e.g. execute a script) when a fax is received, that can happen on in FaxDispatch</p>
+<p>FaxDispatch is sourced by bin/faxrcvd, which is executed by btgetty. Here are some things you can do with it:</p>
+<ul>
+<li>
+<p>Email routing by CallerID, by DID, or by receiving device (example case statements for each type of routing are included). FaxDispatch sets the SENDTO variable in order to route faxes to emails. Similarly it sets FROMADDR. </p>
+</li>
+<li>
+<p>Sending the fax attachment as different types (i.e., TIFF instead of PDF) FaxDispatch sets the FILETYPE variable to pdf,tiff to manage this. Or to "none" to not attach anything at all.  Or you can use TIFF instead of PDF for a specific destination, see below.</p>
+</li>
+<li>
+<p>Automatic printing </p>
+</li>
+<li>Copying faxes to different directories (this is good for those who want backups or to send faxes to a different network share </li>
+<li>Adding faxes to the web interface. </li>
+<li>Set the TEMPLATE variable (or in FaxDispatch, add the variable, as it starts out not included in the file), to specify which email templates are used for notification</li>
+</ul>
+<h2 id="fax-to-email-using-faxdispatch">Fax to Email using FaxDispatch<a class="headerlink" href="#fax-to-email-using-faxdispatch" title="Permanent link">&para;</a></h2>
+<p>By default your server will have the following examples in its FaxDispatch file. You can see examples of how to route your emails based on the Caller ID <code>$CALLID1</code> or the DID Route <code>$CALLID2</code> or the device the fax was recived on <code>$DEVICE</code></p>
+<p><em>When using multiple analog lines, you can determine which port the fax number is connected to by running  <code>watch faxstat</code> and then calling the fax numbers with your phone.</em></p>
+<div class="highlight"><pre><span></span><code><span class="nv">FROMADDR</span><span class="o">=</span>faxserver@example.com
+<span class="nv">FILETYPE</span><span class="o">=</span>pdf
+<span class="c1"># By CallerID</span>
+<span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$CALLID1</span><span class="s2">&quot;</span> <span class="k">in</span>
+   <span class="m">2125551234</span><span class="o">)</span> <span class="nv">SENDTO</span><span class="o">=</span>jack@example.com,jill@example.com<span class="p">;;</span> <span class="c1"># send to both jack and jill</span>
+   <span class="m">2125553456</span><span class="o">)</span> <span class="nv">SENDTO</span><span class="o">=</span><span class="s2">&quot;joe@example.com&quot;</span><span class="p">;</span> <span class="nv">FILETYPE</span><span class="o">=</span>tif<span class="p">;;</span> <span class="c1"># joe wants TIFF instead of PDF</span>
+   *<span class="o">)</span> <span class="nv">SENDTO</span><span class="o">=</span>catchall@example.com<span class="p">;;</span> <span class="c1"># send everything else here</span>
+<span class="k">esac</span>
+<span class="c1"># By DID/DTMF</span>
+<span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$CALLID2</span><span class="s2">&quot;</span> <span class="k">in</span>
+   <span class="m">6001</span><span class="o">)</span> <span class="nv">SENDTO</span><span class="o">=</span>jack@example.com,jill@example.com<span class="p">;;</span> <span class="c1"># send to both jack and jill</span>
+   <span class="m">6002</span><span class="o">)</span> <span class="nv">SENDTO</span><span class="o">=</span><span class="s2">&quot;joe@example.com&quot;</span><span class="p">;</span> <span class="nv">FILETYPE</span><span class="o">=</span>tif<span class="p">;;</span> <span class="c1"># joe wants TIFF instead of PDF</span>
+   *<span class="o">)</span> <span class="nv">SENDTO</span><span class="o">=</span>catchall@example.com<span class="p">;;</span> <span class="c1"># send everything else here</span>
+<span class="k">esac</span>
+<span class="c1"># By Device</span>
+<span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$DEVICE</span><span class="s2">&quot;</span> <span class="k">in</span>
+   ttyS4<span class="o">)</span> <span class="nv">SENDTO</span><span class="o">=</span>john@example.com<span class="p">;;</span> <span class="c1"># all faxes received on ttyS4</span>
+   ttyS5<span class="o">)</span> <span class="nv">SENDTO</span><span class="o">=</span>mary@example.com<span class="p">;;</span> <span class="c1"># all faxes received on ttyS5</span>
+   ttyS6<span class="p">|</span>ttyS7<span class="o">)</span> <span class="nv">SENDTO</span><span class="o">=</span>will@example.com<span class="p">;;</span> <span class="c1"># all faxes received on ttyS6 and ttyS7</span>
+<span class="k">esac</span>
+</code></pre></div>
+<h2 id="copying-the-fax-to-a-local-directory">Copying the FAX to a local directory<a class="headerlink" href="#copying-the-fax-to-a-local-directory" title="Permanent link">&para;</a></h2>
+<p>To copy a fax in PDF format to another directory:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">DATE</span><span class="o">=</span><span class="k">$(</span>date +%Y/%m<span class="k">)</span>
+<span class="nv">TIFF2PDF</span><span class="o">=</span>/usr/bin/tiff2pdf
+<span class="nv">SHAREDIR</span><span class="o">=</span>/media/smbshare
+<span class="k">if</span> <span class="o">[</span> -f <span class="nv">$FILE</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+   mkdir -p <span class="nv">$SHAREDIR</span>/<span class="nv">$DATE</span>
+<span class="c1">#   cp $FILE $SHAREDIR/$DATE/$FILENAME.tif</span>
+   <span class="c1"># Copy the fax with filename format DID-FILENAME.pdf</span>
+   <span class="nv">$TIFF2PDF</span> -o <span class="nv">$SHAREDIR</span>/<span class="nv">$DATE</span>/<span class="nv">$CALLID2</span>-<span class="nv">$FILENAME</span>.pdf <span class="nv">$FILE</span>
+<span class="k">fi</span>
+</code></pre></div>
+<p><strong>Note about copying faxes:</strong></p>
+<p>If you want to back up every received fax, ideally your remote machine would connect to a Samba share on the HylaFAX server, instead of configuring the HylaFAX server to connect to and store faxes on a remote share because of eventual networking problems that might cause some faxes to not be copied over to the remote share.</p>
+<p>We recommend your systems pull from the HylaFAX server for an important reason: so that HylaFAX is guaranteed to be able to invoke all post-reception routines successfully, without reliance on external systems or file storage. HylaFAX's faxrcvd script only runs once, when the fax is received. If your remote filesystem was not mounted at the time it was run, the fax would fail to get copied over, and there would be no indication of any failure. So at least the very first copy HylaFAX does should be local.</p>
+<p>*Add link to Samba setup guide</p>
+<h2 id="using-ldapad">Using LDAP/AD<a class="headerlink" href="#using-ldapad" title="Permanent link">&para;</a></h2>
+<p>Connection to LDAP server must be set up first! See guide below for instructions:</p>
+<p>*Create a link to the LDAP doc</p>
+<p>Route the fax to email based on the DID listed for users in LDAP (or Active Directory):</p>
+<div class="highlight"><pre><span></span><code><span class="nv">LDAPEMAIL</span><span class="o">=</span><span class="sb">`</span>ldapsearch -LLL -x -D <span class="s2">&quot;CN=Fax Server,OU=System Accounts,DC=Example,DC=com&quot;</span> <span class="se">\</span>
+-y /etc/ldap.secret <span class="s2">&quot;facsimileTelephoneNumber=*</span><span class="nv">$CALLID2</span><span class="s2">&quot;</span> mail <span class="p">|</span> grep <span class="s2">&quot;^mail:&quot;</span> <span class="p">|</span> <span class="se">\</span>
+cut -f <span class="m">2</span> -d <span class="s1">&#39; &#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{ str1=str1 $0 &quot;,&quot; }END{ print str1 }&#39;</span><span class="sb">`</span>
+
+<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;</span><span class="nv">$LDAPEMAIL</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nv">SENDTO</span><span class="o">=</span><span class="nv">$LDAPEMAIL</span>
+<span class="k">fi</span>
+</code></pre></div>
+<p>You must update the LDAP connection parameters (ie: LDAP host, BaseDN, etc) in the command above.</p>
+<h2 id="printing-received-faxes">Printing Received Faxes<a class="headerlink" href="#printing-received-faxes" title="Permanent link">&para;</a></h2>
+<p>Printing Received Faxes
+To install the CUPS print queue software, run:</p>
+<p><div class="highlight"><pre><span></span><code> yum -y install cups system-config-printer
+ systemctl start cups
+ cupsctl --remote-admin
+</code></pre></div>
+Edit /etc/cups/cuspd.conf and add this as the first line:</p>
+<div class="highlight"><pre><span></span><code>DefaultEncryption Never
+</code></pre></div>
+<p>Under <code>&lt;Location /admin&gt;</code>, remove the line:</p>
+<div class="highlight"><pre><span></span><code>Encryption Required
+</code></pre></div>
+<p>If the HylaFAX server is not located on your same network, you must also execute the following command:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># sed -i -e &#39;s/Allow @LOCAL/Allow All/&#39; /etc/cups/cupsd.conf</span>
+</code></pre></div>
+<p>Restart CUPS</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># systemctl restart cups</span>
+</code></pre></div>
+<p>Allow connections to CUPS through the local firewall:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># firewall-cmd --zone=public --permanent --add-service=ipp</span>
+<span class="c1"># firewall-cmd --reload</span>
+</code></pre></div>
+<p>Afterwards, you can access the CUPS web interface by pointing your browser to port 631 of your hylafax server’s IP address. </p>
+<p>For example: http://192.168.1.10:631</p>
+<p>*Add screenshot</p>
+<p>To add a printer, click on the <code>Add Printer</code> button and follow the prompts. CUPS will request that you
+login with the root account and the root password you specified during the Appliance installation.
+To print faxes as they arrive, add the following to etc/FaxDispatch:</p>
+<p><div class="highlight"><pre><span></span><code><span class="nv">PRINTER</span><span class="o">=</span>myprinter
+fax2ps <span class="nv">$FILE</span> <span class="p">|</span> lpr -P<span class="nv">$PRINTER</span>
+</code></pre></div>
+Substitute <code>myprinter</code> for the actual printer name configured on your server.</p>
+<h2 id="barcode-decoding">Barcode Decoding<a class="headerlink" href="#barcode-decoding" title="Permanent link">&para;</a></h2>
+<p>Barcode support is provided by the bardecode application located at <code>/var/spool/hylafax/bin/bardecode</code>. Supported barcode types include code39, code128, upca, upce, ean8, code25, ean13 and codabar.</p>
+<p>Example usage:</p>
+<div class="highlight"><pre><span></span><code>bin/bardecode -t any -f <span class="nv">$FILE</span>
+</code></pre></div>
+<p>Execute <code>bin/bardecode</code> for more information</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../license-activation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: License Activation" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              License Activation
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../sending-faxes/" class="md-footer__link md-footer__link--next" aria-label="Next: Sending Faxes" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Sending Faxes
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.c7dec7e7.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.da79ceb7.min.js"></script>
+      
+    
+  </body>
+</html>
