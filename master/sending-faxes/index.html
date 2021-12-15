@@ -1,214 +1,1051 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.1">
+    
+    
+      
         <title>Sending Faxes - HylaFAX Enterprise Guide</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
-    </head>
-
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="../..">HylaFAX Enterprise Guide</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href="../.." class="nav-link">Home</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Quickstart Guide <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../quickstart/appliance-installation/" class="dropdown-item">Getting Started</a>
-</li>
-                                    
-<li>
-    <a href="../../quickstart/installing-the-iso/" class="dropdown-item">Installing the iso</a>
-</li>
-                                    
-<li>
-    <a href="../../quickstart/activating-the-license/" class="dropdown-item">Activate License</a>
-</li>
-                                    
-<li>
-    <a href="../../quickstart/configure-networking/" class="dropdown-item">Configure Networking</a>
-</li>
-                                    
-<li>
-    <a href="../../quickstart/configuring-mail/" class="dropdown-item">Configuring Mail</a>
-</li>
-                                    
-<li>
-    <a href="../../quickstart/enabling-iFAX-support-access/" class="dropdown-item">Enabling iFAX Support Access</a>
-</li>
-                                    
-<li>
-    <a href="../../quickstart/configuring-telco-connections/" class="dropdown-item">Configuring Telco Connections</a>
-</li>
-                                    
-<li>
-    <a href="../../quickstart/configure-dialing-options/" class="dropdown-item">Configure Dialing Options</a>
-</li>
-                                    
-<li>
-    <a href="../../quickstart/web-interface-start-up/" class="dropdown-item">Web Interface Startup</a>
-</li>
-                                    
-<li>
-    <a href="../../quickstart/web-interface-admin-basics/" class="dropdown-item">Web Interface Admin Basics</a>
-</li>
-                                    
-<li>
-    <a href="../../quickstart/web-interface-DID-routes/" class="dropdown-item">Web Interface DID Routes</a>
-</li>
-                                    
-<li>
-    <a href="../../quickstart/notes/" class="dropdown-item">Notes</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Enterprise Guide <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../overview/" class="dropdown-item">Overview</a>
-</li>
-                                    
-<li>
-    <a href="../license-activation/" class="dropdown-item">License Activation</a>
-</li>
-                                    
-<li>
-    <a href="../inbound-fax-routing/" class="dropdown-item">Inbound FAX Routing</a>
-</li>
-                                    
-<li>
-    <a href="./" class="dropdown-item active">Sending Faxes</a>
-</li>
-                                    
-<li>
-    <a href="../client-access/" class="dropdown-item">Client Access</a>
-</li>
-                                    
-<li>
-    <a href="../email-templates/" class="dropdown-item">Email Templates</a>
-</li>
-                                    
-<li>
-    <a href="../firewall-configuration/" class="dropdown-item">Firewall Configuration</a>
-</li>
-                                    
-<li>
-    <a href="../cron-jobs/" class="dropdown-item">Cron Jobs</a>
-</li>
-                                    
-<li>
-    <a href="../troubleshooting/" class="dropdown-item">Troubleshooting and FAQ</a>
-</li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../inbound-fax-routing/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../client-access/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.23b6d78a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#sending-faxes" class="nav-link">Sending Faxes</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#sendfax" class="nav-link">sendfax</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#custom-client-applications" class="nav-link">Custom Client Applications</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#web-interface" class="nav-link">Web Interface</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#email-to-fax" class="nav-link">Email-to-Fax</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#modem-control" class="nav-link">Modem Control</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sending-faxes" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
 
-<h1 id="sending-faxes">Sending Faxes</h1>
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="HylaFAX Enterprise Guide" class="md-header__button md-logo" aria-label="HylaFAX Enterprise Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HylaFAX Enterprise Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sending Faxes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/appliance-installation/" class="md-tabs__link">
+        Quickstart Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../overview/" class="md-tabs__link md-tabs__link--active">
+        Enterprise Guide
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HylaFAX Enterprise Guide" class="md-nav__button md-logo" aria-label="HylaFAX Enterprise Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    HylaFAX Enterprise Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Quickstart Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Quickstart Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quickstart Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/appliance-installation/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/installing-the-iso/" class="md-nav__link">
+        Installing the iso
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/activating-the-license/" class="md-nav__link">
+        Activate License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configure-networking/" class="md-nav__link">
+        Configure Networking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configuring-mail/" class="md-nav__link">
+        Configuring Mail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/enabling-iFAX-support-access/" class="md-nav__link">
+        Enabling iFAX Support Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configuring-telco-connections/" class="md-nav__link">
+        Configuring Telco Connections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/configure-dialing-options/" class="md-nav__link">
+        Configure Dialing Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/web-interface-start-up/" class="md-nav__link">
+        Web Interface Startup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/web-interface-admin-basics/" class="md-nav__link">
+        Web Interface Admin Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/web-interface-DID-routes/" class="md-nav__link">
+        Web Interface DID Routes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/notes/" class="md-nav__link">
+        Notes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Enterprise Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Enterprise Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Enterprise Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license-activation/" class="md-nav__link">
+        License Activation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inbound-fax-routing/" class="md-nav__link">
+        Inbound FAX Routing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Sending Faxes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Sending Faxes
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sendfax" class="md-nav__link">
+    sendfax
+  </a>
+  
+    <nav class="md-nav" aria-label="sendfax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sendfax-options" class="md-nav__link">
+    sendfax options:
+  </a>
+  
+    <nav class="md-nav" aria-label="sendfax options:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#priorities" class="md-nav__link">
+    Priorities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compression" class="md-nav__link">
+    Compression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speed" class="md-nav__link">
+    Speed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caller-id-tsi" class="md-nav__link">
+    Caller ID /tsi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-specific-modem" class="md-nav__link">
+    Use specific modem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tries-and-max-dials" class="md-nav__link">
+    Tries and Max dials
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-client-applications" class="md-nav__link">
+    Custom Client Applications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-interface" class="md-nav__link">
+    Web Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email-to-fax" class="md-nav__link">
+    Email-to-Fax
+  </a>
+  
+    <nav class="md-nav" aria-label="Email-to-Fax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#email-to-fax-tweaks" class="md-nav__link">
+    Email-to-Fax tweaks:
+  </a>
+  
+    <nav class="md-nav" aria-label="Email-to-Fax tweaks:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#increase-postfix-message-size-limit" class="md-nav__link">
+    Increase postfix message size limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-fax-domains" class="md-nav__link">
+    Multiple Fax Domains
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignore-email-body" class="md-nav__link">
+    Ignore Email Body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-email-headers" class="md-nav__link">
+    Disable Email Headers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-cover-pages" class="md-nav__link">
+    Disable Cover Pages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modem-control" class="md-nav__link">
+    Modem Control
+  </a>
+  
+    <nav class="md-nav" aria-label="Modem Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specifying-default-outbound-devices" class="md-nav__link">
+    Specifying Default Outbound Devices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modem-order" class="md-nav__link">
+    Modem Order
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pausing-modems" class="md-nav__link">
+    Pausing Modems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-access/" class="md-nav__link">
+        Client Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../email-templates/" class="md-nav__link">
+        Email Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firewall-configuration/" class="md-nav__link">
+        Firewall Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cron-jobs/" class="md-nav__link">
+        Cron Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting and FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sendfax" class="md-nav__link">
+    sendfax
+  </a>
+  
+    <nav class="md-nav" aria-label="sendfax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sendfax-options" class="md-nav__link">
+    sendfax options:
+  </a>
+  
+    <nav class="md-nav" aria-label="sendfax options:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#priorities" class="md-nav__link">
+    Priorities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compression" class="md-nav__link">
+    Compression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speed" class="md-nav__link">
+    Speed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caller-id-tsi" class="md-nav__link">
+    Caller ID /tsi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-specific-modem" class="md-nav__link">
+    Use specific modem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tries-and-max-dials" class="md-nav__link">
+    Tries and Max dials
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-client-applications" class="md-nav__link">
+    Custom Client Applications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-interface" class="md-nav__link">
+    Web Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email-to-fax" class="md-nav__link">
+    Email-to-Fax
+  </a>
+  
+    <nav class="md-nav" aria-label="Email-to-Fax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#email-to-fax-tweaks" class="md-nav__link">
+    Email-to-Fax tweaks:
+  </a>
+  
+    <nav class="md-nav" aria-label="Email-to-Fax tweaks:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#increase-postfix-message-size-limit" class="md-nav__link">
+    Increase postfix message size limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-fax-domains" class="md-nav__link">
+    Multiple Fax Domains
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignore-email-body" class="md-nav__link">
+    Ignore Email Body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-email-headers" class="md-nav__link">
+    Disable Email Headers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-cover-pages" class="md-nav__link">
+    Disable Cover Pages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modem-control" class="md-nav__link">
+    Modem Control
+  </a>
+  
+    <nav class="md-nav" aria-label="Modem Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specifying-default-outbound-devices" class="md-nav__link">
+    Specifying Default Outbound Devices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modem-order" class="md-nav__link">
+    Modem Order
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pausing-modems" class="md-nav__link">
+    Pausing Modems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="sending-faxes">Sending Faxes<a class="headerlink" href="#sending-faxes" title="Permanent link">&para;</a></h1>
 <hr />
-<h2 id="sendfax">sendfax</h2>
+<h2 id="sendfax">sendfax<a class="headerlink" href="#sendfax" title="Permanent link">&para;</a></h2>
 <p>HylaFAX includes a command line program called sendfax for sending faxes. Typical usage would be something like:</p>
-<pre><code class="language-bash">$ sendfax  -f  &quot;myname@mydomain.com&quot;  -R  -r  &quot;faxsubject&quot;  -c  &quot;coverpage  comments&quot;  -x  &quot;Recipient’s
-company&quot; -d &quot;Recipient@1234567&quot; tofax.pdf
-</code></pre>
+<div class="highlight"><pre><span></span><code>$ sendfax  -f  <span class="s2">&quot;myname@mydomain.com&quot;</span>  -R  -r  <span class="s2">&quot;faxsubject&quot;</span>  -c  <span class="s2">&quot;coverpage  comments&quot;</span>  -x  <span class="s2">&quot;Recipient’s</span>
+<span class="s2">company&quot;</span> -d <span class="s2">&quot;Recipient@1234567&quot;</span> tofax.pdf
+</code></pre></div>
 <p>where <strong><em>myname@mydomain.com</em></strong> is a valid e-mail address for the sender, <strong><em>1234567</em></strong> is the number where to fax, and <strong><em>tofax.pdf</em></strong> is the image file to be faxed. Standard HylaFAX-compatible file formats are ASCII, TIFF, PostScript, and PDF.</p>
 <p>Be aware that sendfax is capable of handling multiple -d options and that only the options that precede it apply to that instance of the -d. In most cases the -d option is the last option that should be used. See the sendfax manpage for more information.</p>
-<pre><code class="language-bash">man sendfax
-</code></pre>
+<div class="highlight"><pre><span></span><code>man sendfax
+</code></pre></div>
 <hr />
-<h3 id="sendfax-options"><code>sendfax</code> options:</h3>
-<h4 id="priorities">Priorities</h4>
+<h3 id="sendfax-options"><code>sendfax</code> options:<a class="headerlink" href="#sendfax-options" title="Permanent link">&para;</a></h3>
+<h4 id="priorities">Priorities<a class="headerlink" href="#priorities" title="Permanent link">&para;</a></h4>
 <hr />
 <p><code>-P</code> </p>
 <p>Ex: <strong><em>sendfax -P 63 ...</em></strong></p>
@@ -216,7 +1053,7 @@ company&quot; -d &quot;Recipient@1234567&quot; tofax.pdf
 <p>By default, each job is assigned 127 for an initial scheduling priority. If a job’s priority is greater than bulk faxes then the job’s priority is raised (numerically lowered) for each failed attempt to transmit so that retransmit attempts are done ahead of newly submitted jobs. In the case of bulk faxes (numerically higher than 190), then the job’s priority is lowered (numerically raised) for each failed attempt to transmit so that the whole of the bulk-queued jobs will be attempted before any are retried. </p>
 <p>The priority may also be specified as one of the following symbolic names: default or normal (127), bulk or junk (191), low (190), or high (63).</p>
 <hr />
-<h4 id="compression">Compression</h4>
+<h4 id="compression">Compression<a class="headerlink" href="#compression" title="Permanent link">&para;</a></h4>
 <hr />
 <p><code>-1</code></p>
 <p>Ex: <strong><em>sendfax -1 ...</em></strong></p>
@@ -228,7 +1065,7 @@ company&quot; -d &quot;Recipient@1234567&quot; tofax.pdf
 <p>Ex: <strong><em>sendfax -3 ...</em></strong></p>
 <p>Transmit facsimile documents using 2-D MMR compression, if possible.  By default HylaFAX will use the optimal compression scheme supported by the transmitting modem and receiving facsimile device.</p>
 <hr />
-<h4 id="speed">Speed</h4>
+<h4 id="speed">Speed<a class="headerlink" href="#speed" title="Permanent link">&para;</a></h4>
 <hr />
 <p><code>-b speed</code> </p>
 <p>Ex: <strong><em>sendfax -b 14400 ...</em></strong></p>
@@ -237,18 +1074,18 @@ company&quot; -d &quot;Recipient@1234567&quot; tofax.pdf
 <p>Ex: <strong><em>sendfax -B 2400 ...</em></strong></p>
 <p>Try to transmit facsimile documents using the desired signalling rate. Possible speeds are: 2400, 4800, 7200, 9600, 12000, 14400, 16800, 19200, 21600, 24000, 26400, 28800, 31200, and 33600. If the specified speed is greater than the transmitting modem or receiver is capable of, it is reduced to the highest possible speed both devices support. By default Hyla FAX will use the fastest possible rate supported by the transmitting modem and receiving facsimile device (unless restricted by other server configuration); this option can be used to reduce the speed. Note that international calls are frequently more reliable when transmissions are restricted to 9600 bits/second. For Class 1/1.0 devices, if the specified speed is not greater than 14400 then V.34 will not be attempted, and if the specified speed is 9600 or 7200 then V.29 will be assumed in lieu of V.17. </p>
 <hr />
-<h4 id="caller-id-tsi">Caller ID /tsi</h4>
+<h4 id="caller-id-tsi">Caller ID /tsi<a class="headerlink" href="#caller-id-tsi" title="Permanent link">&para;</a></h4>
 <hr />
 <p><code>-S</code></p>
 <p>Ex: <strong><em>sendfax -S 1234567890 ...</em></strong></p>
 <p>Pass tsi to the server as the suggested sender identification to be used, for example, in tagline imaging and fax protocol.</p>
 <hr />
-<h4 id="use-specific-modem">Use specific modem</h4>
+<h4 id="use-specific-modem">Use specific modem<a class="headerlink" href="#use-specific-modem" title="Permanent link">&para;</a></h4>
 <hr />
 <p><code>-h modem@localhost</code></p>
 <p>Ex: <strong><em>sendfax -h boston00@localhost ...</em></strong></p>
 <hr />
-<h4 id="tries-and-max-dials">Tries and Max dials</h4>
+<h4 id="tries-and-max-dials">Tries and Max dials<a class="headerlink" href="#tries-and-max-dials" title="Permanent link">&para;</a></h4>
 <hr />
 <ul>
 <li>Create a page for deeper explination of both</li>
@@ -260,20 +1097,20 @@ company&quot; -d &quot;Recipient@1234567&quot; tofax.pdf
 <p>Ex: <strong><em>sendfax -T 4 ...</em></strong></p>
 <p>Make no more than maxdials calls in attempting to send the facsimile. By default, HylaFAX will redial 12 times before killing a job. Use ''-1'' to indicate that no maxdials value should be specified to the server. </p>
 <hr />
-<h2 id="custom-client-applications">Custom Client Applications</h2>
+<h2 id="custom-client-applications">Custom Client Applications<a class="headerlink" href="#custom-client-applications" title="Permanent link">&para;</a></h2>
 <hr />
 <p>Should  you  desire  to  write  your  own  client  application  for  submitting  faxes  to  HylaFAX,  below  are
 sample applications in .NET and Java:
 • .NET sample client http://people.ifax.com/~david/dotnetsample.zip
 • Java sample client http://people.ifax.com/~david/javasample.zip</p>
 <hr />
-<h2 id="web-interface">Web Interface</h2>
+<h2 id="web-interface">Web Interface<a class="headerlink" href="#web-interface" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>add link to web interface doc</li>
 </ul>
 <hr />
-<h2 id="email-to-fax">Email-to-Fax</h2>
+<h2 id="email-to-fax">Email-to-Fax<a class="headerlink" href="#email-to-fax" title="Permanent link">&para;</a></h2>
 <hr />
 <p><img alt="Screenshot" src="../img/Email-to-Fax.png" />
 Email to FAX is simply a matter of Postfix receiving an email and handing it off to the faxmail program. Postfix is the email server that receives the email, and faxmail is a program included with HylaFAX for processing email messages and submitting them to HylaFAX for faxing.</p>
@@ -281,70 +1118,70 @@ Email to FAX is simply a matter of Postfix receiving an email and handing it off
 <p>To configure Email to FAX support, enter the domain name that you intend to use into the “Fax Domain” field (ie. fax.example.com) and save your changes. Keep in mind that your mail server must be able to lookup the Fax Domain in your network's DNS in order to deliver emails to the HylaFAX Enterprise server.</p>
 <p>Next, send the email by addressing the recipient using the "FAXNUMBER@fax.example.com" format where FAXNUMBER is the actual fax number. If the job was successfully added to the HylaFAX queue, you'll see it in the Outbox of web interface and in the output of "faxstat -s".</p>
 <hr />
-<h3 id="email-to-fax-tweaks">Email-to-Fax tweaks:</h3>
-<h4 id="increase-postfix-message-size-limit">Increase postfix message size limit</h4>
+<h3 id="email-to-fax-tweaks">Email-to-Fax tweaks:<a class="headerlink" href="#email-to-fax-tweaks" title="Permanent link">&para;</a></h3>
+<h4 id="increase-postfix-message-size-limit">Increase postfix message size limit<a class="headerlink" href="#increase-postfix-message-size-limit" title="Permanent link">&para;</a></h4>
 <hr />
 <p>To review the current maximum message size limit, run:</p>
-<pre><code class="language-bash">postconf message_size_limit
-</code></pre>
+<div class="highlight"><pre><span></span><code>postconf message_size_limit
+</code></pre></div>
 <p>To increase the max message size limit, run:</p>
-<pre><code class="language-bash">postconf -e message_size_limit=20480000
+<div class="highlight"><pre><span></span><code>postconf -e <span class="nv">message_size_limit</span><span class="o">=</span><span class="m">20480000</span>
 postfix reload
-</code></pre>
+</code></pre></div>
 <hr />
-<h4 id="multiple-fax-domains">Multiple Fax Domains</h4>
+<h4 id="multiple-fax-domains">Multiple Fax Domains<a class="headerlink" href="#multiple-fax-domains" title="Permanent link">&para;</a></h4>
 <hr />
 <p>To set this up you will need to edit the postfix configration file <code>main.cf</code> located at <strong><em>/etc/postfix/</em></strong>. At the bottom of this file is the variable <code>relay_domains</code>. Add your new domains to that variable separated by a comma.</p>
-<pre><code class="language-bash">relay_domains= faxserver.example.com, faxserver.test.com, faxserver.ifax.com
-</code></pre>
-<p>In the file virtual_alias-fax located at <strong><em>/etc/postfix/</em></strong> , add a line at the bottom for each new domain in this style (this would be to add "fax.newdomain.com" as an email-to-FAX domain:</p>
-<pre><code class="language-bash">/^([+]?[0-9*#.-]+)@fax\.newdomain\.com$/ $1@fax.localhost
-</code></pre>
-<p>Finally reload the postfix configuration:</p>
-<pre><code class="language-bash">postfix reload
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="nv">relay_domains</span><span class="o">=</span> faxserver.example.com, faxserver.test.com, faxserver.ifax.com
+</code></pre></div>
+In the file virtual_alias-fax located at <strong><em>/etc/postfix/</em></strong> , add a line at the bottom for each new domain in this style (this would be to add "fax.newdomain.com" as an email-to-FAX domain:
+<div class="highlight"><pre><span></span><code>/^<span class="o">([</span>+<span class="o">]</span>?<span class="o">[</span><span class="m">0</span>-9*#.-<span class="o">]</span>+<span class="o">)</span>@fax<span class="se">\.</span>newdomain<span class="se">\.</span>com$/ <span class="nv">$1</span>@fax.localhost
+</code></pre></div>
+Finally reload the postfix configuration:
+<div class="highlight"><pre><span></span><code>postfix reload
+</code></pre></div></p>
 <hr />
-<h4 id="ignore-email-body">Ignore Email Body</h4>
+<h4 id="ignore-email-body">Ignore Email Body<a class="headerlink" href="#ignore-email-body" title="Permanent link">&para;</a></h4>
 <hr />
 <p>If you would like to ignore the email body of an Email to FAX message, execute the following command:</p>
-<pre><code class="language-bash">ln -s /bin/true /usr/sbin/faxmail/text/plain
-</code></pre>
+<div class="highlight"><pre><span></span><code>ln -s /bin/true /usr/sbin/faxmail/text/plain
+</code></pre></div>
 <p>That file tells faxmail to ignore "text/plain" email attachments, which is what the email body consists of. Simply delete <strong><em>/usr/sbin/faxmail/text/plain</em></strong> and faxmail will send the email body in addition to any other plain text files in the email to HylaFAX for faxing.</p>
 <hr />
-<h4 id="disable-email-headers">Disable Email Headers</h4>
+<h4 id="disable-email-headers">Disable Email Headers<a class="headerlink" href="#disable-email-headers" title="Permanent link">&para;</a></h4>
 <hr />
 <p>Create <strong><em>/etc/hylafax/faxmail.conf</em></strong> with the following content to disable the email headers from appearing in the fax:</p>
-<pre><code class="language-bash">AutoCoverPage: false
+<div class="highlight"><pre><span></span><code>AutoCoverPage: <span class="nb">false</span>
 TextPointSize: 12pt
 Headers: clear
 MailUser: faxmail
 TrimText: yes
-</code></pre>
+</code></pre></div>
 <hr />
-<h4 id="disable-cover-pages">Disable Cover Pages</h4>
+<h4 id="disable-cover-pages">Disable Cover Pages<a class="headerlink" href="#disable-cover-pages" title="Permanent link">&para;</a></h4>
 <hr />
 <p>Create <strong><em>/etc/hylafax/faxmail.conf</em></strong> with the following content to disable the email headers from appearing in the fax:</p>
-<pre><code class="language-bash">AutoCoverPage: false
+<div class="highlight"><pre><span></span><code>AutoCoverPage: <span class="nb">false</span>
 TextPointSize: 12pt
 Headers: clear
 MailUser: faxmail
 TrimText: yes
-</code></pre>
+</code></pre></div>
 <hr />
-<h2 id="modem-control">Modem Control</h2>
-<h3 id="specifying-default-outbound-devices">Specifying Default Outbound Devices</h3>
+<h2 id="modem-control">Modem Control<a class="headerlink" href="#modem-control" title="Permanent link">&para;</a></h2>
+<h3 id="specifying-default-outbound-devices">Specifying Default Outbound Devices<a class="headerlink" href="#specifying-default-outbound-devices" title="Permanent link">&para;</a></h3>
 <hr />
 <p>You can use the <code>ModemReadyState</code> parameter in the <strong><em>/var/spool/hylafax/etc/config.bostonXX</em></strong> files to control whether or not the device is assigned to outbound jobs.</p>
 <p>For example, if you want to dedicate <code>boston00</code> to <code>boston01</code> for receiving faxes only (thus allowing <code>boston02-07</code> to both send and receive faxes), then you would add the following setting to files <code>config.boston00</code> and <code>config.boston01</code>:</p>
-<pre><code class="language-bash">ModemReadyState: D
-</code></pre>
+<div class="highlight"><pre><span></span><code>ModemReadyState: D
+</code></pre></div>
 <p>That would tell HylaFAX not to use boston00 and boston01 for outbound jobs. For details, please see the <code>hylafax-config</code> manpage.</p>
 <p>Afterward, restart the affected btgettys so that they immediately reload their configuration:</p>
 <p>faxquit boston00; faxquit boston01</p>
 <p>-or-</p>
 <p>for i in /var/spool/hylafax/FIFO.boston0[0-1]; do echo Q &gt; $i; done</p>
 <hr />
-<h3 id="modem-order">Modem Order</h3>
+<h3 id="modem-order">Modem Order<a class="headerlink" href="#modem-order" title="Permanent link">&para;</a></h3>
 <hr />
 <p>In /var/spool/hylafax/etc/config, you can use the “any” modem group to specify which modem devices to use. For example, to only use boston00 to boston07, use:</p>
 <p>ModemGroup: “any:boston0[0-7]"</p>
@@ -366,88 +1203,84 @@ config.boston01: ModemPriority: 22</p>
 <p>Afterwards, restart the btgetty's so that they immediately reload their configuration.</p>
 <p>for i in /var/spool/hylafax/FIFO.boston0[0-1]; do echo Q &gt; $i; done</p>
 <hr />
-<h3 id="pausing-modems">Pausing Modems</h3>
+<h3 id="pausing-modems">Pausing Modems<a class="headerlink" href="#pausing-modems" title="Permanent link">&para;</a></h3>
 <hr />
 <p>Add the following to the bottom of /var/spool/hylafax/etc/config:</p>
 <p>ModemGroup: "any:hold"</p>
 <p>No restarts are required to put this into effect. (faxq rereads the etc/config file after receiving another event - such as a new job being created - so once the file is edited, no new jobs will be sent.)</p>
 <p>When all channels are "Running and idle” then the queue is officially paused.</p>
 <p>Then to un-pause the queue, comment out the ModemGroup line. At that point you can force faxq to reread the config file by running</p>
-<p>echo Z &gt; /var/spool/hylafax/FIFO</p></div>
-            </div>
-        </div>
+<p>echo Z &gt; /var/spool/hylafax/FIFO</p>
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>
-            var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
+              
+            </article>
+          </div>
         </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../inbound-fax-routing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Inbound FAX Routing" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Inbound FAX Routing
             </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../client-access/" class="md-footer__link md-footer__link--next" aria-label="Next: Client Access" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Client Access
             </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.c7dec7e7.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.da79ceb7.min.js"></script>
+      
+    
+  </body>
 </html>
