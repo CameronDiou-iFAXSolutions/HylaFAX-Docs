@@ -634,6 +634,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../samba/" class="md-nav__link">
+        Samba Share
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../maxdials-maxtries/" class="md-nav__link">
         MaxDials and MaxTries
       </a>
@@ -876,13 +890,14 @@
 <p>Master call log</p>
 <p>/var/spool/hylafax/etc/xferfaxlog contains a summary of each sent and received fax. There's one line for each sent fax (SENT records) and two for each received; one for the fax (RECV), one for the call (CALL).</p>
 <p>Example:</p>
-<p>05/11/22 14:11  SEND    000000415   boston00    140 ""  root@localhost  "215-825-8792"  "iFAXSolutions" 2220073 1   0:00:24 0:00:23 ""  ""  ""  ""  "root"  ""
-05/11/22 14:12  RECV    000000416   boston01    recvq/fax000000067.tif  ""  fax ""  "IFAX DEBUG"    2220073 2   0:00:33 0:00:33 ""  "18177696712"   "12158258792"   "iFax Solutions"    ""  "00 00 00"
-05/11/22 14:12  CALL    000000416   boston01        ""  fax ""  ""  0   0   0:00:36 0:00:36 ""  "18177696712"   "12158258792"   "iFax Solutions"    ""  ""
-05/11/22 14:14  SEND    000000417   boston01    141 ""  root@localhost  "215-825-8792"  "iFAXSolutions" 2220073 1   0:00:24 0:00:22 ""  ""  ""  ""  "root"  ""
-05/11/22 14:14  RECV    000000418   boston00    recvq/fax000000068.tif  ""  fax ""  "IFAX DEBUG"    2220073 2   0:00:32 0:00:32 ""  "18177696712"   "12158258792"   "iFax Solutions"    ""  "00 00 00"
-05/11/22 14:14  CALL    000000418   boston00        ""  fax ""  ""  0   0   0:00:36 0:00:36 ""  "18177696712"   "12158258792"   "iFax Solutions"    ""  ""
-05/11/22 14:20  RECV    000000420   boston01    recvq/fax000000069.tif  ""  fax ""  "HylaFAX Enterprise"    2220073 1   0:01:08 0:01:08""   "18177696712"   "18177696712"   ""  ""  "00 00 00"</p>
+<div class="highlight"><pre><span></span><code><span class="m">05</span>/11/22 <span class="m">14</span>:11  SEND    <span class="m">000000415</span>   boston00    <span class="m">140</span> <span class="s2">&quot;&quot;</span>  root@localhost  <span class="s2">&quot;215-825-8792&quot;</span>  <span class="s2">&quot;iFAXSolutions&quot;</span> <span class="m">2220073</span> <span class="m">1</span>   <span class="m">0</span>:00:24 <span class="m">0</span>:00:23 <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;root&quot;</span>  <span class="s2">&quot;&quot;</span>
+<span class="m">05</span>/11/22 <span class="m">14</span>:12  RECV    <span class="m">000000416</span>   boston01    recvq/fax000000067.tif  <span class="s2">&quot;&quot;</span>  fax <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;IFAX DEBUG&quot;</span>    <span class="m">2220073</span> <span class="m">2</span>   <span class="m">0</span>:00:33 <span class="m">0</span>:00:33 <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;18177696712&quot;</span>   <span class="s2">&quot;12158258792&quot;</span>   <span class="s2">&quot;iFax Solutions&quot;</span>    <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;00 00 00&quot;</span>
+<span class="m">05</span>/11/22 <span class="m">14</span>:12  CALL    <span class="m">000000416</span>   boston01        <span class="s2">&quot;&quot;</span>  fax <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;&quot;</span>  <span class="m">0</span>   <span class="m">0</span>   <span class="m">0</span>:00:36 <span class="m">0</span>:00:36 <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;18177696712&quot;</span>   <span class="s2">&quot;12158258792&quot;</span>   <span class="s2">&quot;iFax Solutions&quot;</span>    <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;&quot;</span>
+<span class="m">05</span>/11/22 <span class="m">14</span>:14  SEND    <span class="m">000000417</span>   boston01    <span class="m">141</span> <span class="s2">&quot;&quot;</span>  root@localhost  <span class="s2">&quot;215-825-8792&quot;</span>  <span class="s2">&quot;iFAXSolutions&quot;</span> <span class="m">2220073</span> <span class="m">1</span>   <span class="m">0</span>:00:24 <span class="m">0</span>:00:22 <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;root&quot;</span>  <span class="s2">&quot;&quot;</span>
+<span class="m">05</span>/11/22 <span class="m">14</span>:14  RECV    <span class="m">000000418</span>   boston00    recvq/fax000000068.tif  <span class="s2">&quot;&quot;</span>  fax <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;IFAX DEBUG&quot;</span>    <span class="m">2220073</span> <span class="m">2</span>   <span class="m">0</span>:00:32 <span class="m">0</span>:00:32 <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;18177696712&quot;</span>   <span class="s2">&quot;12158258792&quot;</span>   <span class="s2">&quot;iFax Solutions&quot;</span>    <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;00 00 00&quot;</span>
+<span class="m">05</span>/11/22 <span class="m">14</span>:14  CALL    <span class="m">000000418</span>   boston00        <span class="s2">&quot;&quot;</span>  fax <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;&quot;</span>  <span class="m">0</span>   <span class="m">0</span>   <span class="m">0</span>:00:36 <span class="m">0</span>:00:36 <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;18177696712&quot;</span>   <span class="s2">&quot;12158258792&quot;</span>   <span class="s2">&quot;iFax Solutions&quot;</span>    <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;&quot;</span>
+<span class="m">05</span>/11/22 <span class="m">14</span>:20  RECV    <span class="m">000000420</span>   boston01    recvq/fax000000069.tif  <span class="s2">&quot;&quot;</span>  fax <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;HylaFAX Enterprise&quot;</span>    <span class="m">2220073</span> <span class="m">1</span>   <span class="m">0</span>:01:08 <span class="m">0</span>:01:08<span class="s2">&quot;&quot;</span>   <span class="s2">&quot;18177696712&quot;</span>   <span class="s2">&quot;18177696712&quot;</span>   <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;&quot;</span>  <span class="s2">&quot;00 00 00&quot;</span>
+</code></pre></div>
 <h2 id="restarting-the-btgetty-and-faxgetty-processes">Restarting the btgetty and faxgetty processes<a class="headerlink" href="#restarting-the-btgetty-and-faxgetty-processes" title="Permanent link">&para;</a></h2>
 <p>After making a configuration change to <code>etc/config.bostonXX</code>, <code>etc/config.ttySX</code>, or any of the files that those files include, run the following to restart the btgetty and/or faxgetty processes that read those configuration files:</p>
 <p><div class="highlight"><pre><span></span><code><span class="k">for</span> i <span class="k">in</span> /var/spool/hylafax/FIFO.*<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> Q &gt; <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span>

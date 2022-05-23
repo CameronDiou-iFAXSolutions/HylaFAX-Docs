@@ -13,7 +13,7 @@
     
     
       
-        <title>Overview - HylaFAX Handbook</title>
+        <title>Samba Share - HylaFAX Handbook</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#minimum-hardware-requirements" class="md-skip">
+        <a href="#fax-share-added-6152020" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Samba Share
             
           </span>
         </div>
@@ -175,7 +175,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../overview/" class="md-tabs__link md-tabs__link--active">
         Enterprise Guide
       </a>
     </li>
@@ -450,62 +450,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Overview
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
         Overview
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#minimum-hardware-requirements" class="md-nav__link">
-    Minimum Hardware requirements:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operating-systems-supported" class="md-nav__link">
-    Operating Systems supported:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manual-installation" class="md-nav__link">
-    Manual Installation:
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -683,11 +632,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../samba/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Samba Share
       </a>
+      
     </li>
   
 
@@ -758,35 +717,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#minimum-hardware-requirements" class="md-nav__link">
-    Minimum Hardware requirements:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operating-systems-supported" class="md-nav__link">
-    Operating Systems supported:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manual-installation" class="md-nav__link">
-    Manual Installation:
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -799,33 +731,48 @@
               
                 
 
-  <h1>Overview</h1>
-
-<p>The recommended method for installing HylaFAX Enterprise is by downloading the Appliance ISO and installing that on a new bare metal or virtual machine.</p>
-<p>The Appliance ISO is based on CentOS 7 64-bit, and can be downloaded at the following URL and then burned to disc, flash drive or used directly with your virtual machine:</p>
-<p><a href="http://repo.ifax.com/iso/">Download Here</a></p>
-<h2 id="minimum-hardware-requirements"><ins>Minimum Hardware requirements</ins>:<a class="headerlink" href="#minimum-hardware-requirements" title="Permanent link">&para;</a></h2>
-<p>Intel Core 2.8 GHz or higher
-2 GB RAM
-100 GB Hard drive</p>
-<h2 id="operating-systems-supported"><ins>Operating Systems supported</ins>:<a class="headerlink" href="#operating-systems-supported" title="Permanent link">&para;</a></h2>
-<p>RedHat Enterprise Linux 7 (64-bit)
-CentOS Linux 7 (64-bit)
-Oracle Enterprise Linux 7 (64-bit)</p>
-<h2 id="manual-installation"><ins>Manual Installation</ins>:<a class="headerlink" href="#manual-installation" title="Permanent link">&para;</a></h2>
-<p>HylaFAX Enterprise can be manually installed using the iFAX Solutions YUM repository on a minimal install of RHEL 7, CentOS 7, or Oracle Enterprise Linux 7.</p>
-<p>Use the following commands to perform the install:
-<div class="highlight"><pre><span></span><code>rpm -ivh http://repo.ifax.com/yum/ee-6.3/ifax-ee-6.3.rpm
-yum install epel-release
-yum update
-reboot
-yum install hylafax-enterprise-appliance
-systemctl start hylafax-enterprise-appliance
-/usr/sbin/attach-console
-</code></pre></div></p>
-<p>Verify Download:
-<a href="http://repo.ifax.com/yum/RPM-GPG-KEY-iFAX">iFAX Solutions PGP key</a></p>
-<p>Afterwards, follow the Appliance Quickstart Guide for the initial setup procedure.</p>
+<p>Here's how to set up a locally-shared directory on a HylaFAX Enterprise server and to copy incoming faxes to it.</p>
+<p>1) Install samba, if it isn't installed already</p>
+<p>yum install samba samba-common</p>
+<p>2) Create /smbshare (it doesn't have to be called that. This could be any name, anywhere on a file system where a mount point can live) and set it to be owned by the user "hylafax".</p>
+<p>mkdir /smbshare
+chown hylafax /smbshare</p>
+<p>3) Edit the Samba configuration in /etc/samba/smb.conf. Set a workgroup and server string (near the top of this file), as desired.</p>
+<p>Near the bottom of the file are Share Definitions. Add an entry for the new directory to be shared, for example:</p>
+<h1 id="fax-share-added-6152020">FAX share, added 6/15/2020<a class="headerlink" href="#fax-share-added-6152020" title="Permanent link">&para;</a></h1>
+<p>[smbshare]
+comment = Fax Share
+path = /smbshare
+browseable = yes
+guest ok = yes
+read only = no
+create mask = 0755
+force user = hylafax
+force group = hylafax</p>
+<p>4) Tell the system to start the samba service on boot</p>
+<p>systemctl enable smb</p>
+<p>5) Start the samba service</p>
+<p>systemctl start smb</p>
+<p>6) To verify things, at this point you can run</p>
+<p>testparm</p>
+<p>which shows the basic Samba configuration - and its service definitions should include the new share definition.</p>
+<p>6a) Can't browse the share without auth? Set up a user for user-based authentication.</p>
+<p>From the Linux command line, create a local userid and set a password to access those users:</p>
+<p>useradd testuser
+passwd testpass</p>
+<p>Then set the samba user and set a password for it, with "smbpasswd":</p>
+<p>smbpasswd -a testuser</p>
+<p>Then enable that userid, with the command:</p>
+<p>smbpasswd -e testuser</p>
+<p>7) Set up SELinux  and Firewall</p>
+<p>chcon -R -t samba_share_t /path/to/dir</p>
+<p>Or if this is a home directory:</p>
+<p>setsebool -P samba_enable_home_dirs on</p>
+<p>firewall-cmd --add-service=samba --permanent</p>
+<p>8) Configure FaxDispatch to copy incoming faxes to that share - OR - configure "Copy Path" in DID Routing/Sender Routing in the Web Interface.</p>
+<p>8a) If you're using FaxDispatch, you can pretty much un-comment the example code to test this. If you've used a different name than "smbshare", you'll want to edit that name.</p>
+<p>8b) If you're using the Web Interface, "Copy Path" is a field to specify a full directory path to where faxes for that DID/Sender should be copied.</p>
+<p>9) Send yourself a fax and check that it's saved to the new share.</p>
 
               
             </article>
@@ -839,7 +786,7 @@ systemctl start hylafax-enterprise-appliance
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../quickstart/notes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Notes" rel="prev">
+        <a href="../cron-jobs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cron Jobs" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -848,20 +795,20 @@ systemctl start hylafax-enterprise-appliance
               <span class="md-footer__direction">
                 Previous
               </span>
-              Notes
+              Cron Jobs
             </div>
           </div>
         </a>
       
       
         
-        <a href="../license-activation/" class="md-footer__link md-footer__link--next" aria-label="Next: License Activation" rel="next">
+        <a href="../maxdials-maxtries/" class="md-footer__link md-footer__link--next" aria-label="Next: MaxDials and MaxTries" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              License Activation
+              MaxDials and MaxTries
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -717,6 +717,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../samba/" class="md-nav__link">
+        Samba Share
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../maxdials-maxtries/" class="md-nav__link">
         MaxDials and MaxTries
       </a>
@@ -913,7 +927,7 @@
 <p><strong>Note about copying faxes:</strong></p>
 <p>If you want to back up every received fax, ideally your remote machine would connect to a Samba share on the HylaFAX server, instead of configuring the HylaFAX server to connect to and store faxes on a remote share because of eventual networking problems that might cause some faxes to not be copied over to the remote share.</p>
 <p>We recommend your systems pull from the HylaFAX server for an important reason: so that HylaFAX is guaranteed to be able to invoke all post-reception routines successfully, without reliance on external systems or file storage. HylaFAX's faxrcvd script only runs once, when the fax is received. If your remote filesystem was not mounted at the time it was run, the fax would fail to get copied over, and there would be no indication of any failure. So at least the very first copy HylaFAX does should be local.</p>
-<p>*Add link to Samba setup guide</p>
+<p>You can find a guide to setting up a samba in a later chapter, or on the tab to the left. </p>
 <h2 id="using-ldapad">Using LDAP/AD<a class="headerlink" href="#using-ldapad" title="Permanent link">&para;</a></h2>
 <p>Connection to LDAP server must be set up first! See guide below for instructions:</p>
 <p>*Create a link to the LDAP doc</p>
@@ -952,7 +966,7 @@ Edit /etc/cups/cuspd.conf and add this as the first line:</p>
 </code></pre></div>
 <p>Afterwards, you can access the CUPS web interface by pointing your browser to port 631 of your hylafax server’s IP address. </p>
 <p>For example: http://192.168.1.10:631</p>
-<p>*Add screenshot</p>
+<p>*Screenshot needed</p>
 <p>To add a printer, click on the <code>Add Printer</code> button and follow the prompts. CUPS will request that you
 login with the root account and the root password you specified during the Appliance installation.
 To print faxes as they arrive, add the following to etc/FaxDispatch:</p>

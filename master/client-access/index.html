@@ -514,12 +514,53 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Client Access
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Client Access
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-client-access" class="md-nav__link">
+    Setting up Client Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-jobs-from-the-queue" class="md-nav__link">
+    Removing Jobs from the Queue
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-received-faxes" class="md-nav__link">
+    Viewing Received Faxes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -644,6 +685,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../samba/" class="md-nav__link">
+        Samba Share
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../maxdials-maxtries/" class="md-nav__link">
         MaxDials and MaxTries
       </a>
@@ -703,8 +758,35 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-client-access" class="md-nav__link">
+    Setting up Client Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-jobs-from-the-queue" class="md-nav__link">
+    Removing Jobs from the Queue
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-received-faxes" class="md-nav__link">
+    Viewing Received Faxes
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -717,7 +799,9 @@
               
                 
 
-<h1 id="setting-up-client-access">Setting up Client Access<a class="headerlink" href="#setting-up-client-access" title="Permanent link">&para;</a></h1>
+  <h1>Client Access</h1>
+
+<h2 id="setting-up-client-access">Setting up Client Access<a class="headerlink" href="#setting-up-client-access" title="Permanent link">&para;</a></h2>
 <p>It is necessary to specify which client machines and users can have access to a HylaFAX server machine. This is specified by the contents of the <code>etc/hosts.hfaxd</code> file. The contents of this file is specified in the <code>hosts.hfaxd(5F)</code> manual page. The default  <code>etc/hosts.hfaxd</code> file that comes with HylaFAX permits anyone to have access through the localhost network interface (loopback). Here is an example hosts.hfaxd:</p>
 <div class="highlight"><pre><span></span><code>localhost
 <span class="m">127</span>.0.0.1
@@ -734,7 +818,7 @@ will allow any user password-less access to the server using any username they w
 <div class="highlight"><pre><span></span><code>faxadduser -p secret myuser
 </code></pre></div>
 <p>For more in-depth information, please see the <code>faxadduser</code>, <code>faxdeluser</code> and <code>hosts.hfaxd</code> manpages.</p>
-<h1 id="removing-jobs-from-the-queue">Removing Jobs from the Queue<a class="headerlink" href="#removing-jobs-from-the-queue" title="Permanent link">&para;</a></h1>
+<h2 id="removing-jobs-from-the-queue">Removing Jobs from the Queue<a class="headerlink" href="#removing-jobs-from-the-queue" title="Permanent link">&para;</a></h2>
 <p>In order to remove a job from the queue, you must set the FAXUSER environment variable to the owner of the fax job and then use <code>faxrm JOBID</code>.
 Example:</p>
 <p><div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">FAXUSER</span><span class="o">=</span>cam
@@ -750,7 +834,7 @@ To remove all jobs in queue for a specific sender, use the following script:
 <p>Execute:
 <div class="highlight"><pre><span></span><code>./script.sh david
 </code></pre></div></p>
-<h1 id="viewing-received-faxes">Viewing Received Faxes<a class="headerlink" href="#viewing-received-faxes" title="Permanent link">&para;</a></h1>
+<h2 id="viewing-received-faxes">Viewing Received Faxes<a class="headerlink" href="#viewing-received-faxes" title="Permanent link">&para;</a></h2>
 <p>In order for client applications to access your received faxes, the TIF file permissions in the <code>recvq/</code> directory must be world-readable. </p>
 <p>This is accomplished by changing RecvFileMode in the <code>etc/CONFIG/site</code>. </p>
 <p>Set the following:
