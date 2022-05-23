@@ -13,7 +13,7 @@
     
     
       
-        <title>Installing the iso - HylaFAX Enterprise Guide</title>
+        <title>Odbc - HylaFAX Enterprise Guide</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installing-the-iso" class="md-skip">
+        <a href="#yum-install-postgresql-server-postgresql-odbc" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installing the iso
+              Odbc
             
           </span>
         </div>
@@ -163,15 +163,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../appliance-installation/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../quickstart/appliance-installation/" class="md-tabs__link">
         Quickstart Guide
       </a>
     </li>
@@ -247,14 +245,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -277,7 +273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../appliance-installation/" class="md-nav__link">
+      <a href="../../quickstart/appliance-installation/" class="md-nav__link">
         Getting Started
       </a>
     </li>
@@ -289,21 +285,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../quickstart/installing-the-iso/" class="md-nav__link">
         Installing the iso
       </a>
-      
     </li>
   
 
@@ -315,7 +301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../activating-the-license/" class="md-nav__link">
+      <a href="../../quickstart/activating-the-license/" class="md-nav__link">
         Activate License
       </a>
     </li>
@@ -329,7 +315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configure-networking/" class="md-nav__link">
+      <a href="../../quickstart/configure-networking/" class="md-nav__link">
         Configure Networking
       </a>
     </li>
@@ -343,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuring-mail/" class="md-nav__link">
+      <a href="../../quickstart/configuring-mail/" class="md-nav__link">
         Configuring Mail
       </a>
     </li>
@@ -357,7 +343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../enabling-iFAX-support-access/" class="md-nav__link">
+      <a href="../../quickstart/enabling-iFAX-support-access/" class="md-nav__link">
         Enabling iFAX Support Access
       </a>
     </li>
@@ -371,7 +357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuring-telco-connections/" class="md-nav__link">
+      <a href="../../quickstart/configuring-telco-connections/" class="md-nav__link">
         Configuring Telco Connections
       </a>
     </li>
@@ -385,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configure-dialing-options/" class="md-nav__link">
+      <a href="../../quickstart/configure-dialing-options/" class="md-nav__link">
         Configure Dialing Options
       </a>
     </li>
@@ -399,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-interface-start-up/" class="md-nav__link">
+      <a href="../../quickstart/web-interface-start-up/" class="md-nav__link">
         Web Interface Startup
       </a>
     </li>
@@ -413,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-interface-admin-basics/" class="md-nav__link">
+      <a href="../../quickstart/web-interface-admin-basics/" class="md-nav__link">
         Web Interface Admin Basics
       </a>
     </li>
@@ -427,7 +413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-interface-DID-routes/" class="md-nav__link">
+      <a href="../../quickstart/web-interface-DID-routes/" class="md-nav__link">
         Web Interface DID Routes
       </a>
     </li>
@@ -441,7 +427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../notes/" class="md-nav__link">
+      <a href="../../quickstart/notes/" class="md-nav__link">
         Notes
       </a>
     </li>
@@ -646,18 +632,182 @@
               
                 
 
-<h1 id="installing-the-iso"><ins>Installing the iso</ins><a class="headerlink" href="#installing-the-iso" title="Permanent link">&para;</a></h1>
-<p>****THIS WILL ERASE ALL DATA ON YOUR HARD DRIVE****</p>
-<p>Power on your server (or virtual machine) and press <code>ENTER</code> at the installation prompt.</p>
-<p><img alt="Screenshot" src="../img/screenshot1.png" /></p>
-<p>Select your language</p>
-<p><img alt="Screenshot" src="../img/screenshot2.png" /></p>
-<p>Click on <code>Installation Destination</code> and then click <code>Done</code> to keep automatic partitioning</p>
-<p><img alt="Screenshot" src="../img/screenshot3.png" />
-<img alt="Screenshot" src="../img/screenshot4.png" /></p>
-<p>Then click the <code>Begin Installation</code> button.</p>
-<p>Note: <strong><ins>During the installation procedure, you must choose a password for the ‘root’ administrative UNIX user.<ins/></strong> 
-<strong><ins>This is not the web interface password.<ins/></strong></p>
+<p>HylaFAX Enterprise Guide for ODBC</p>
+<ol>
+<li>Preface</li>
+</ol>
+<p>HylaFAX Enterprise will utilize an ODBC connection for storing data regarding both inbound and outbound faxing. In the case of inbound faxing, it is possible to route incoming faxes using database rows which, presumably, some automated provisioning agent would be adding/populating.</p>
+<p>In the case of outbound faxing, ODBC usage enables a data warehouse for reporting on fax traffic including final transmission status, bitrate, duration of transmission, the receiver’s station identifier, etc.</p>
+<p>With clever use of stored procedures and triggers some business logic can added to both transmission and reception of faxes, and this is yet another point of integration in addition to the client/server protocol that some customers use to get data out of HylaFAX. For instance, if a received fax needs to be injected into some customer-facing application, you could execute a stored procedure to capture the fax (which can be stored in the database) and move it to a new table/schema.</p>
+<p>***INFO:</p>
+<p>This guide will explain how to use PostgreSQL and MariaDB on CentOS 7 64-bit with HylaFAX Enterprise.</p>
+<ol>
+<li>Configure ODBC Database Server
+2.1. PostgreSQL installation</li>
+</ol>
+<h1 id="yum-install-postgresql-server-postgresql-odbc">yum install postgresql-server postgresql-odbc<a class="headerlink" href="#yum-install-postgresql-server-postgresql-odbc" title="Permanent link">&para;</a></h1>
+<h1 id="postgresql-setup-initdb">postgresql-setup initdb<a class="headerlink" href="#postgresql-setup-initdb" title="Permanent link">&para;</a></h1>
+<h1 id="systemctl-enable-postgresql">systemctl enable postgresql<a class="headerlink" href="#systemctl-enable-postgresql" title="Permanent link">&para;</a></h1>
+<p>2.1.1. Configure PostgreSQL
+Edit /var/lib/pgsql/data/pg_hba.conf:
+Add the authentication line BEFORE the default ident lines:
+local   hylafax        hylafax                                  md5
+host    hylafax        hylafax       127.0.0.1/32               md5
+host    hylafax        hylafax       ::1/128                    md5</p>
+<h1 id="if-you-need-network-access-use-something-like">If you need network access, use something like:<a class="headerlink" href="#if-you-need-network-access-use-something-like" title="Permanent link">&para;</a></h1>
+<p>host    hylafax        hylafax       192.168.1.0/24             md5
+The file is well commented.
+Edit /var/lib/pgsql/data/postgresql.conf
+Important variables are:
+    listen_addresses = 'localhost'
+    max_connections = 512
+    shared_buffers = 1024
+max_connections needed are (minimum):
+    2 * N + 1 + n + H
+where:
+    N is the number of channels
+    1 is for faxq
+    n is the number of simultaneous faxq job preparations (n &lt;= N)
+    H is the number of simultaneous hfaxd connections
+These  minimum  settings  do  not  take  into  account  any  other  necessary  connections  from  non-hylafax
+related processes (like any other tools/scripts, or anything that faxrcvd might do, etc).
+2
+2.1.2. Start PostgreSQL</p>
+<h1 id="systemctl-start-postgresql">systemctl start postgresql<a class="headerlink" href="#systemctl-start-postgresql" title="Permanent link">&para;</a></h1>
+<p>2.1.3. Create HylaFAX User/Database for PostgreSQL</p>
+<h1 id="su-postgres">su - postgres<a class="headerlink" href="#su-postgres" title="Permanent link">&para;</a></h1>
+<p>$ createdb hylafax
+$ createuser -A -D -P hylafax
+Password: ee
+$ createlang plpgsql hylafax
+$ exit
+2.1.4. Import HylaFAX Schema</p>
+<h1 id="psql-u-hylafax-hylafax-varspoolhylafaxifaxsqlpostgressql">psql -U hylafax hylafax &lt; /var/spool/hylafax/ifax/sql/postgres.sql<a class="headerlink" href="#psql-u-hylafax-hylafax-varspoolhylafaxifaxsqlpostgressql" title="Permanent link">&para;</a></h1>
+<p>2.1.5. Setup ODBC
+Edit /etc/odbc.ini
+[hylafax]
+Driver      = /usr/lib64/psqlodbc.so
+Database    = hylafax
+Server      = localhost
+UserName    = hylafax
+Password    = ee
+ReadOnly    = No
+Debug       = 0
+CommLog     = 0
+UseServerSidePrepare = 0
+3
+2.2. MariaDB installation</p>
+<h1 id="yum-install-mariadb-mariadb-server-mysql-connector-odbc">yum install mariadb mariadb-server mysql-connector-odbc<a class="headerlink" href="#yum-install-mariadb-mariadb-server-mysql-connector-odbc" title="Permanent link">&para;</a></h1>
+<h1 id="systemctl-start-mariadb">systemctl start mariadb<a class="headerlink" href="#systemctl-start-mariadb" title="Permanent link">&para;</a></h1>
+<h1 id="systemctl-enable-mariadb">systemctl enable mariadb<a class="headerlink" href="#systemctl-enable-mariadb" title="Permanent link">&para;</a></h1>
+<p>2.2.1. Create HylaFAX User/Database on MariaDB</p>
+<h1 id="mysqladmin-create-hylafax">mysqladmin create hylafax<a class="headerlink" href="#mysqladmin-create-hylafax" title="Permanent link">&para;</a></h1>
+<h1 id="mysql-mysql">mysql mysql<a class="headerlink" href="#mysql-mysql" title="Permanent link">&para;</a></h1>
+<p>Execute these SQL queries:
+GRANT ALL PRIVILEGES ON hylafax.* TO 'hylafax'@'localhost' IDENTIFIED BY 'ee';
+If you need network access, use something like:
+GRANT ALL PRIVILEGES ON hylafax.* TO 'hylafax'@'209.166.32.52' IDENTIFIED BY 'ee';
+Update privileges:
+FLUSH PRIVILEGES;
+exit;
+2.2.2. Import HylaFAX Schema</p>
+<h1 id="mysql-uhylafax-pee-hylafax-varspoolhylafaxifaxsqlmysqlsql">mysql -uhylafax -pee hylafax &lt; /var/spool/hylafax/ifax/sql/mysql.sql<a class="headerlink" href="#mysql-uhylafax-pee-hylafax-varspoolhylafaxifaxsqlmysqlsql" title="Permanent link">&para;</a></h1>
+<p>2.2.3. Setup ODBC
+Edit /etc/odbc.ini
+[hylafax]
+Driver      = /usr/lib64/libmyodbc5.so
+Database    = hylafax
+Server      = localhost
+User        = hylafax
+Password    = ee
+;ReadOnly   = No
+4
+3. Test the ODBC Connection
+Test the connection using isql hylafax
+[root@hylafax ~]# isql hylafax
++----------------------------------------+
+| Connected!                             |
+|                                        |
+| sql-statement                          |
+| help [tablename]                       |
+| quit                                   |
+|                                        |
++----------------------------------------+
+SQL&gt; SELECT count(*) FROM hylafax_statements;
++-----------------+
+| count           |
++-----------------+
+| 13              |
++-----------------+
+SQLRowCount returns 1
+1 rows fetched
+SQL&gt; quit
+4. Configure HylaFAX Enterprise with ODBC
+Create /var/spool/hylafax/etc/CONFIG/database with the following content:
+DataInitialize:    "odbc: dsn=hylafax"</p>
+<h1 id="dataoption-odbc-usernamehylafax">DataOption:       "odbc: username=hylafax"<a class="headerlink" href="#dataoption-odbc-usernamehylafax" title="Permanent link">&para;</a></h1>
+<h1 id="dataoption-odbc-passwordee">DataOption:       "odbc: password=ee"<a class="headerlink" href="#dataoption-odbc-passwordee" title="Permanent link">&para;</a></h1>
+<p>DataSource:        "FaxRecvInfo: odbc"
+DataSource:        "FaxAcctInfo: odbc"
+Afterwards, configure your modem devices to include that file. For example, in
+/var/spool/hylafax/etc/CONFIG/boston add:
+Include:           etc/CONFIG/database
+Next, restart faxgetty and/or btgetty proccesses in order to connect them to ODBC:</p>
+<h1 id="for-i-in-varspoolhylafaxfifo-do-echo-q-i-done">for i in /var/spool/hylafax/FIFO.*; do echo Q &gt; $i; done<a class="headerlink" href="#for-i-in-varspoolhylafaxfifo-do-echo-q-i-done" title="Permanent link">&para;</a></h1>
+<p>5</p>
+<p>If there is an ODBC connection problem, the faxgetty/btgetty processes will fail to start
+properly.
+You  can  verify  whether  there  were  errors  while  connecting  to  the  database  by
+executing:</p>
+<h1 id="grep-i-odbc-varlogmessages">grep -i odbc /var/log/messages<a class="headerlink" href="#grep-i-odbc-varlogmessages" title="Permanent link">&para;</a></h1>
+<p>If HylaFAX is having difficulty connecting to ODBC, try uncommenting the
+'DataOption' lines above.
+Should  you  need  to  disable  ODBC,  simply  comment  out  the  Include  line  you  added
+above.
+5. Retrieving Data from ODBC
+Here are sample SQL queries for retrieving records from the 'communication' table:
+SELECT tstart, command, commid, jobid, mailaddr, dest, csi, npages, status
+FROM communication WHERE dest = '12155558774';
+SELECT tstart, commid, device, jobid, npages, status FROM communication
+ORDER BY tstart DESC LIMIT 40;
+ A description of each column can be found in the xferfaxlog manpage.
+6. Populating the Database
+You  can  use  the  xferfaxlog2db.php  script  from  http://people.ifax.com/~david/scripts/  to  export  your
+xferfaxlog  data  into  the  ODBC  database.  Only  records  not  currently  available  in  the  database  will  be
+created.
+6
+7. Checking a job’s final status
+The HylaFAX job 'status' is available in the 'status' column of the 'communication' table. On success, the
+status field will be empty. A call that ended with an error will report the error in the 'status' column.
+Please  note  that  the  /var/spool/hylafax/etc/xferfaxlog  data  and  the  'communication'  database  table
+contain call detail records. If you want to know the final status of a job, it’s better to add that column to
+the database and then update it via the FaxNotify script.
+For example, you’d add the following to /var/spool/hylafax/etc/FaxNotify:</p>
+<h1 id="add-final-status-eg-done-failed-etc-to-the-communication-table">Add final status (e.g. 'done', 'failed', etc) to the communication table<a class="headerlink" href="#add-final-status-eg-done-failed-etc-to-the-communication-table" title="Permanent link">&para;</a></h1>
+<h1 id="see-man-notify-for-list-of-statuses">See <code>man notify</code> for list of statuses<a class="headerlink" href="#see-man-notify-for-list-of-statuses" title="Permanent link">&para;</a></h1>
+<p>DB=hylafax
+USER=hylafax
+PASS=ee
+case "<span class="arithmatex">\(WHY" in
+  blocked)    ;;
+  requeued)   ;;
+  *) echo "UPDATE communication SET finalstatus='\)</span>WHY' WHERE commid = '$COMMID'" | isql
+$DB $USER $PASS
+   ;;
+esac
+You must apply the following schema change for both PostgreSQL and MariaDB:
+ALTER TABLE communication ADD finalstatus VARCHAR(20) DEFAULT NULL;
+You must also apply the following schema change for MariaDB:
+ALTER TABLE communication CHANGE tstart tstart TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+Once  you’ve  applied  these  changes,  you’ll  be  able  to  query  the  database  regarding  jobs  where  the
+finalstatus is not null and get the true final status of the job.
+SELECT * FROM communication WHERE command = 'SEND' AND finalstatus is not null;
+7
+You can use the following queries to retroactively set the finalstatus column:
+UPDATE communication SET finalstatus='done' WHERE command = 'SEND' AND finalstatus is
+null AND status is null;
+UPDATE communication SET finalstatus='failed' WHERE command = 'SEND' AND finalstatus is
+null AND status like '%too many%';</p>
 
               
             </article>
@@ -667,41 +817,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../appliance-installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting Started" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Getting Started
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../activating-the-license/" class="md-footer__link md-footer__link--next" aria-label="Next: Activate License" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Activate License
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
