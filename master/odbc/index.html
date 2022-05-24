@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#yum-install-postgresql-server-postgresql-odbc" class="md-skip">
+        <a href="#hylafax-enterprise-guide-for-odbc" class="md-skip">
           Skip to content
         </a>
       
@@ -573,9 +573,164 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ODBC
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         ODBC
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    Preface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-odbc-database-server" class="md-nav__link">
+    Configure ODBC Database Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure ODBC Database Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-installation" class="md-nav__link">
+    PostgreSQL installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-postgresql" class="md-nav__link">
+    Configure PostgreSQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-postgresql" class="md-nav__link">
+    Start PostgreSQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-hylafax-userdatabase-for-postgresql" class="md-nav__link">
+    Create HylaFAX User/Database for PostgreSQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-hylafax-schema" class="md-nav__link">
+    Import HylaFAX Schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-odbc" class="md-nav__link">
+    Setup ODBC
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup ODBC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mariadb-installation" class="md-nav__link">
+    MariaDB installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-hylafax-userdatabase-on-mariadb" class="md-nav__link">
+    Create HylaFAX User/Database on MariaDB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-hylafax-schema_1" class="md-nav__link">
+    Import HylaFAX Schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-odbc_1" class="md-nav__link">
+    Setup ODBC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-the-odbc-connection" class="md-nav__link">
+    Test the ODBC Connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-hylafax-enterprise-with-odbc" class="md-nav__link">
+    Configure HylaFAX Enterprise with ODBC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieving-data-from-odbc" class="md-nav__link">
+    Retrieving Data from ODBC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#populating-the-database" class="md-nav__link">
+    Populating the Database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-a-jobs-final-status" class="md-nav__link">
+    Checking a job’s final status
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -720,6 +875,145 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    Preface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-odbc-database-server" class="md-nav__link">
+    Configure ODBC Database Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure ODBC Database Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-installation" class="md-nav__link">
+    PostgreSQL installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-postgresql" class="md-nav__link">
+    Configure PostgreSQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-postgresql" class="md-nav__link">
+    Start PostgreSQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-hylafax-userdatabase-for-postgresql" class="md-nav__link">
+    Create HylaFAX User/Database for PostgreSQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-hylafax-schema" class="md-nav__link">
+    Import HylaFAX Schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-odbc" class="md-nav__link">
+    Setup ODBC
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup ODBC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mariadb-installation" class="md-nav__link">
+    MariaDB installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-hylafax-userdatabase-on-mariadb" class="md-nav__link">
+    Create HylaFAX User/Database on MariaDB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-hylafax-schema_1" class="md-nav__link">
+    Import HylaFAX Schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-odbc_1" class="md-nav__link">
+    Setup ODBC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-the-odbc-connection" class="md-nav__link">
+    Test the ODBC Connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-hylafax-enterprise-with-odbc" class="md-nav__link">
+    Configure HylaFAX Enterprise with ODBC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieving-data-from-odbc" class="md-nav__link">
+    Retrieving Data from ODBC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#populating-the-database" class="md-nav__link">
+    Populating the Database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-a-jobs-final-status" class="md-nav__link">
+    Checking a job’s final status
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -731,182 +1025,180 @@
               
                 
 
-<p>HylaFAX Enterprise Guide for ODBC</p>
-<ol>
-<li>Preface</li>
-</ol>
+<h1 id="hylafax-enterprise-guide-for-odbc">HylaFAX Enterprise Guide for ODBC<a class="headerlink" href="#hylafax-enterprise-guide-for-odbc" title="Permanent link">&para;</a></h1>
+<h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
 <p>HylaFAX Enterprise will utilize an ODBC connection for storing data regarding both inbound and outbound faxing. In the case of inbound faxing, it is possible to route incoming faxes using database rows which, presumably, some automated provisioning agent would be adding/populating.</p>
 <p>In the case of outbound faxing, ODBC usage enables a data warehouse for reporting on fax traffic including final transmission status, bitrate, duration of transmission, the receiver’s station identifier, etc.</p>
 <p>With clever use of stored procedures and triggers some business logic can added to both transmission and reception of faxes, and this is yet another point of integration in addition to the client/server protocol that some customers use to get data out of HylaFAX. For instance, if a received fax needs to be injected into some customer-facing application, you could execute a stored procedure to capture the fax (which can be stored in the database) and move it to a new table/schema.</p>
-<p>***INFO:</p>
+<p><ins>NOTE</ins>:</p>
 <p>This guide will explain how to use PostgreSQL and MariaDB on CentOS 7 64-bit with HylaFAX Enterprise.</p>
-<ol>
-<li>Configure ODBC Database Server
-2.1. PostgreSQL installation</li>
-</ol>
-<h1 id="yum-install-postgresql-server-postgresql-odbc">yum install postgresql-server postgresql-odbc<a class="headerlink" href="#yum-install-postgresql-server-postgresql-odbc" title="Permanent link">&para;</a></h1>
-<h1 id="postgresql-setup-initdb">postgresql-setup initdb<a class="headerlink" href="#postgresql-setup-initdb" title="Permanent link">&para;</a></h1>
-<h1 id="systemctl-enable-postgresql">systemctl enable postgresql<a class="headerlink" href="#systemctl-enable-postgresql" title="Permanent link">&para;</a></h1>
-<p>2.1.1. Configure PostgreSQL
-Edit /var/lib/pgsql/data/pg_hba.conf:
-Add the authentication line BEFORE the default ident lines:
-local   hylafax        hylafax                                  md5
-host    hylafax        hylafax       127.0.0.1/32               md5
-host    hylafax        hylafax       ::1/128                    md5</p>
-<h1 id="if-you-need-network-access-use-something-like">If you need network access, use something like:<a class="headerlink" href="#if-you-need-network-access-use-something-like" title="Permanent link">&para;</a></h1>
-<p>host    hylafax        hylafax       192.168.1.0/24             md5
-The file is well commented.
-Edit /var/lib/pgsql/data/postgresql.conf
+<h2 id="configure-odbc-database-server">Configure ODBC Database Server<a class="headerlink" href="#configure-odbc-database-server" title="Permanent link">&para;</a></h2>
+<h3 id="postgresql-installation">PostgreSQL installation<a class="headerlink" href="#postgresql-installation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># yum install postgresql-server postgresql-odbc</span>
+<span class="c1"># postgresql-setup initdb</span>
+<span class="c1"># systemctl enable postgresql</span>
+</code></pre></div>
+<h3 id="configure-postgresql">Configure PostgreSQL<a class="headerlink" href="#configure-postgresql" title="Permanent link">&para;</a></h3>
+<p>Edit <code>/var/lib/pgsql/data/pg_hba.conf</code>:
+Add the authentication line BEFORE the default ident lines:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">local</span>   hylafax        hylafax                                  md5
+host    hylafax        hylafax       <span class="m">127</span>.0.0.1/32               md5
+host    hylafax        hylafax       ::1/128                    md5
+</code></pre></div>
+<p>If you need network access, use something like:</p>
+<div class="highlight"><pre><span></span><code>host    hylafax        hylafax       <span class="m">192</span>.168.1.0/24             md5
+</code></pre></div>
+<p>The file is well commented.</p>
+<p>Edit <code>/var/lib/pgsql/data/postgresql.conf</code>
 Important variables are:
-    listen_addresses = 'localhost'
-    max_connections = 512
-    shared_buffers = 1024
-max_connections needed are (minimum):
-    2 * N + 1 + n + H
+<div class="highlight"><pre><span></span><code>    <span class="nv">listen_addresses</span> <span class="o">=</span> <span class="s1">&#39;localhost&#39;</span>
+    <span class="nv">max_connections</span> <span class="o">=</span> <span class="m">512</span>
+    <span class="nv">shared_buffers</span> <span class="o">=</span> <span class="m">1024</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>max_connections needed are <span class="o">(</span>minimum<span class="o">)</span>:
+    <span class="m">2</span> * N + <span class="m">1</span> + n + H
 where:
     N is the number of channels
-    1 is for faxq
-    n is the number of simultaneous faxq job preparations (n &lt;= N)
+    <span class="m">1</span> is <span class="k">for</span> faxq
+    n is the number of simultaneous faxq job preparations <span class="o">(</span>n &lt;<span class="o">=</span> N<span class="o">)</span>
     H is the number of simultaneous hfaxd connections
-These  minimum  settings  do  not  take  into  account  any  other  necessary  connections  from  non-hylafax
-related processes (like any other tools/scripts, or anything that faxrcvd might do, etc).
-2
-2.1.2. Start PostgreSQL</p>
-<h1 id="systemctl-start-postgresql">systemctl start postgresql<a class="headerlink" href="#systemctl-start-postgresql" title="Permanent link">&para;</a></h1>
-<p>2.1.3. Create HylaFAX User/Database for PostgreSQL</p>
-<h1 id="su-postgres">su - postgres<a class="headerlink" href="#su-postgres" title="Permanent link">&para;</a></h1>
-<p>$ createdb hylafax
+</code></pre></div>
+These minimum settings do not take into account any other necessary connections from non-hylafax related processes (like any other tools/scripts, or anything that faxrcvd might do, etc).</p>
+<h3 id="start-postgresql">Start PostgreSQL<a class="headerlink" href="#start-postgresql" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># systemctl start postgresql</span>
+</code></pre></div>
+<h3 id="create-hylafax-userdatabase-for-postgresql">Create HylaFAX User/Database for PostgreSQL<a class="headerlink" href="#create-hylafax-userdatabase-for-postgresql" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># su - postgres</span>
+$ createdb hylafax
 $ createuser -A -D -P hylafax
 Password: ee
 $ createlang plpgsql hylafax
-$ exit
-2.1.4. Import HylaFAX Schema</p>
-<h1 id="psql-u-hylafax-hylafax-varspoolhylafaxifaxsqlpostgressql">psql -U hylafax hylafax &lt; /var/spool/hylafax/ifax/sql/postgres.sql<a class="headerlink" href="#psql-u-hylafax-hylafax-varspoolhylafaxifaxsqlpostgressql" title="Permanent link">&para;</a></h1>
-<p>2.1.5. Setup ODBC
-Edit /etc/odbc.ini
-[hylafax]
-Driver      = /usr/lib64/psqlodbc.so
-Database    = hylafax
-Server      = localhost
-UserName    = hylafax
-Password    = ee
-ReadOnly    = No
-Debug       = 0
-CommLog     = 0
-UseServerSidePrepare = 0
-3
-2.2. MariaDB installation</p>
-<h1 id="yum-install-mariadb-mariadb-server-mysql-connector-odbc">yum install mariadb mariadb-server mysql-connector-odbc<a class="headerlink" href="#yum-install-mariadb-mariadb-server-mysql-connector-odbc" title="Permanent link">&para;</a></h1>
-<h1 id="systemctl-start-mariadb">systemctl start mariadb<a class="headerlink" href="#systemctl-start-mariadb" title="Permanent link">&para;</a></h1>
-<h1 id="systemctl-enable-mariadb">systemctl enable mariadb<a class="headerlink" href="#systemctl-enable-mariadb" title="Permanent link">&para;</a></h1>
-<p>2.2.1. Create HylaFAX User/Database on MariaDB</p>
-<h1 id="mysqladmin-create-hylafax">mysqladmin create hylafax<a class="headerlink" href="#mysqladmin-create-hylafax" title="Permanent link">&para;</a></h1>
-<h1 id="mysql-mysql">mysql mysql<a class="headerlink" href="#mysql-mysql" title="Permanent link">&para;</a></h1>
-<p>Execute these SQL queries:
-GRANT ALL PRIVILEGES ON hylafax.* TO 'hylafax'@'localhost' IDENTIFIED BY 'ee';
-If you need network access, use something like:
-GRANT ALL PRIVILEGES ON hylafax.* TO 'hylafax'@'209.166.32.52' IDENTIFIED BY 'ee';
+$ <span class="nb">exit</span>
+</code></pre></div>
+<h3 id="import-hylafax-schema">Import HylaFAX Schema<a class="headerlink" href="#import-hylafax-schema" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># psql -U hylafax hylafax &lt; /var/spool/hylafax/ifax/sql/postgres.sql</span>
+</code></pre></div>
+<h3 id="setup-odbc">Setup ODBC<a class="headerlink" href="#setup-odbc" title="Permanent link">&para;</a></h3>
+<p>Edit <code>/etc/odbc.ini</code></p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>hylafax<span class="o">]</span>
+<span class="nv">Driver</span>      <span class="o">=</span> /usr/lib64/psqlodbc.so
+<span class="nv">Database</span>    <span class="o">=</span> hylafax
+<span class="nv">Server</span>      <span class="o">=</span> localhost
+<span class="nv">UserName</span>    <span class="o">=</span> hylafax
+<span class="nv">Password</span>    <span class="o">=</span> ee
+<span class="nv">ReadOnly</span>    <span class="o">=</span> No
+<span class="nv">Debug</span>       <span class="o">=</span> <span class="m">0</span>
+<span class="nv">CommLog</span>     <span class="o">=</span> <span class="m">0</span>
+<span class="nv">UseServerSidePrepare</span> <span class="o">=</span> <span class="m">0</span>
+</code></pre></div>
+<h4 id="mariadb-installation">MariaDB installation<a class="headerlink" href="#mariadb-installation" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># yum install mariadb mariadb-server mysql-connector-odbc</span>
+<span class="c1"># systemctl start mariadb</span>
+<span class="c1"># systemctl enable mariadb</span>
+</code></pre></div>
+<h4 id="create-hylafax-userdatabase-on-mariadb">Create HylaFAX User/Database on MariaDB<a class="headerlink" href="#create-hylafax-userdatabase-on-mariadb" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># mysqladmin create hylafax</span>
+<span class="c1"># mysql mysql</span>
+</code></pre></div>
+<p>Execute these SQL queries:</p>
+<div class="highlight"><pre><span></span><code>GRANT ALL PRIVILEGES ON hylafax.* TO <span class="s1">&#39;hylafax&#39;</span>@<span class="s1">&#39;localhost&#39;</span> IDENTIFIED BY <span class="s1">&#39;ee&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>If you need network access, use something like:
+<div class="highlight"><pre><span></span><code>GRANT ALL PRIVILEGES ON hylafax.* TO <span class="s1">&#39;hylafax&#39;</span>@<span class="s1">&#39;209.166.32.52&#39;</span> IDENTIFIED BY <span class="s1">&#39;ee&#39;</span><span class="p">;</span>
 Update privileges:
-FLUSH PRIVILEGES;
-exit;
-2.2.2. Import HylaFAX Schema</p>
-<h1 id="mysql-uhylafax-pee-hylafax-varspoolhylafaxifaxsqlmysqlsql">mysql -uhylafax -pee hylafax &lt; /var/spool/hylafax/ifax/sql/mysql.sql<a class="headerlink" href="#mysql-uhylafax-pee-hylafax-varspoolhylafaxifaxsqlmysqlsql" title="Permanent link">&para;</a></h1>
-<p>2.2.3. Setup ODBC
-Edit /etc/odbc.ini
-[hylafax]
-Driver      = /usr/lib64/libmyodbc5.so
-Database    = hylafax
-Server      = localhost
-User        = hylafax
-Password    = ee
-;ReadOnly   = No
-4
-3. Test the ODBC Connection
-Test the connection using isql hylafax
-[root@hylafax ~]# isql hylafax
+FLUSH PRIVILEGES<span class="p">;</span>
+exit<span class="p">;</span>
+</code></pre></div></p>
+<h4 id="import-hylafax-schema_1">Import HylaFAX Schema<a class="headerlink" href="#import-hylafax-schema_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># mysql -uhylafax -pee hylafax &lt; /var/spool/hylafax/ifax/sql/mysql.sql</span>
+</code></pre></div>
+<h4 id="setup-odbc_1">Setup ODBC<a class="headerlink" href="#setup-odbc_1" title="Permanent link">&para;</a></h4>
+<p>Edit <code>/etc/odbc.ini</code></p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>hylafax<span class="o">]</span>
+<span class="nv">Driver</span>      <span class="o">=</span> /usr/lib64/libmyodbc5.so
+<span class="nv">Database</span>    <span class="o">=</span> hylafax
+<span class="nv">Server</span>      <span class="o">=</span> localhost
+<span class="nv">User</span>        <span class="o">=</span> hylafax
+<span class="nv">Password</span>    <span class="o">=</span> ee
+<span class="p">;</span><span class="nv">ReadOnly</span>   <span class="o">=</span> No
+</code></pre></div>
+<h4 id="test-the-odbc-connection">Test the ODBC Connection<a class="headerlink" href="#test-the-odbc-connection" title="Permanent link">&para;</a></h4>
+<p>Test the connection using <code>isql hylafax</code></p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@hylafax ~<span class="o">]</span><span class="c1"># isql hylafax</span>
 +----------------------------------------+
-| Connected!                             |
-|                                        |
-| sql-statement                          |
-| help [tablename]                       |
-| quit                                   |
-|                                        |
+<span class="p">|</span> Connected!                             <span class="p">|</span>
+<span class="p">|</span>                                        <span class="p">|</span>
+<span class="p">|</span> sql-statement                          <span class="p">|</span>
+<span class="p">|</span> <span class="nb">help</span> <span class="o">[</span>tablename<span class="o">]</span>                       <span class="p">|</span>
+<span class="p">|</span> quit                                   <span class="p">|</span>
+<span class="p">|</span>                                        <span class="p">|</span>
 +----------------------------------------+
-SQL&gt; SELECT count(*) FROM hylafax_statements;
+SQL&gt; SELECT count<span class="o">(</span>*<span class="o">)</span> FROM hylafax_statements<span class="p">;</span>
 +-----------------+
-| count           |
+<span class="p">|</span> count           <span class="p">|</span>
 +-----------------+
-| 13              |
+<span class="p">|</span> <span class="m">13</span>              <span class="p">|</span>
 +-----------------+
-SQLRowCount returns 1
-1 rows fetched
+SQLRowCount returns <span class="m">1</span>
+<span class="m">1</span> rows fetched
 SQL&gt; quit
-4. Configure HylaFAX Enterprise with ODBC
-Create /var/spool/hylafax/etc/CONFIG/database with the following content:
-DataInitialize:    "odbc: dsn=hylafax"</p>
-<h1 id="dataoption-odbc-usernamehylafax">DataOption:       "odbc: username=hylafax"<a class="headerlink" href="#dataoption-odbc-usernamehylafax" title="Permanent link">&para;</a></h1>
-<h1 id="dataoption-odbc-passwordee">DataOption:       "odbc: password=ee"<a class="headerlink" href="#dataoption-odbc-passwordee" title="Permanent link">&para;</a></h1>
-<p>DataSource:        "FaxRecvInfo: odbc"
-DataSource:        "FaxAcctInfo: odbc"
-Afterwards, configure your modem devices to include that file. For example, in
-/var/spool/hylafax/etc/CONFIG/boston add:
-Include:           etc/CONFIG/database
-Next, restart faxgetty and/or btgetty proccesses in order to connect them to ODBC:</p>
-<h1 id="for-i-in-varspoolhylafaxfifo-do-echo-q-i-done">for i in /var/spool/hylafax/FIFO.*; do echo Q &gt; $i; done<a class="headerlink" href="#for-i-in-varspoolhylafaxfifo-do-echo-q-i-done" title="Permanent link">&para;</a></h1>
-<p>5</p>
-<p>If there is an ODBC connection problem, the faxgetty/btgetty processes will fail to start
-properly.
-You  can  verify  whether  there  were  errors  while  connecting  to  the  database  by
-executing:</p>
-<h1 id="grep-i-odbc-varlogmessages">grep -i odbc /var/log/messages<a class="headerlink" href="#grep-i-odbc-varlogmessages" title="Permanent link">&para;</a></h1>
-<p>If HylaFAX is having difficulty connecting to ODBC, try uncommenting the
-'DataOption' lines above.
-Should  you  need  to  disable  ODBC,  simply  comment  out  the  Include  line  you  added
-above.
-5. Retrieving Data from ODBC
-Here are sample SQL queries for retrieving records from the 'communication' table:
-SELECT tstart, command, commid, jobid, mailaddr, dest, csi, npages, status
-FROM communication WHERE dest = '12155558774';
-SELECT tstart, commid, device, jobid, npages, status FROM communication
-ORDER BY tstart DESC LIMIT 40;
- A description of each column can be found in the xferfaxlog manpage.
-6. Populating the Database
-You  can  use  the  xferfaxlog2db.php  script  from  http://people.ifax.com/~david/scripts/  to  export  your
-xferfaxlog  data  into  the  ODBC  database.  Only  records  not  currently  available  in  the  database  will  be
-created.
-6
-7. Checking a job’s final status
-The HylaFAX job 'status' is available in the 'status' column of the 'communication' table. On success, the
-status field will be empty. A call that ended with an error will report the error in the 'status' column.
-Please  note  that  the  /var/spool/hylafax/etc/xferfaxlog  data  and  the  'communication'  database  table
-contain call detail records. If you want to know the final status of a job, it’s better to add that column to
-the database and then update it via the FaxNotify script.
-For example, you’d add the following to /var/spool/hylafax/etc/FaxNotify:</p>
-<h1 id="add-final-status-eg-done-failed-etc-to-the-communication-table">Add final status (e.g. 'done', 'failed', etc) to the communication table<a class="headerlink" href="#add-final-status-eg-done-failed-etc-to-the-communication-table" title="Permanent link">&para;</a></h1>
-<h1 id="see-man-notify-for-list-of-statuses">See <code>man notify</code> for list of statuses<a class="headerlink" href="#see-man-notify-for-list-of-statuses" title="Permanent link">&para;</a></h1>
-<p>DB=hylafax
-USER=hylafax
-PASS=ee
-case "<span class="arithmatex">\(WHY" in
-  blocked)    ;;
-  requeued)   ;;
-  *) echo "UPDATE communication SET finalstatus='\)</span>WHY' WHERE commid = '$COMMID'" | isql
-$DB $USER $PASS
-   ;;
-esac
-You must apply the following schema change for both PostgreSQL and MariaDB:
-ALTER TABLE communication ADD finalstatus VARCHAR(20) DEFAULT NULL;
-You must also apply the following schema change for MariaDB:
-ALTER TABLE communication CHANGE tstart tstart TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
-Once  you’ve  applied  these  changes,  you’ll  be  able  to  query  the  database  regarding  jobs  where  the
-finalstatus is not null and get the true final status of the job.
-SELECT * FROM communication WHERE command = 'SEND' AND finalstatus is not null;
-7
-You can use the following queries to retroactively set the finalstatus column:
-UPDATE communication SET finalstatus='done' WHERE command = 'SEND' AND finalstatus is
-null AND status is null;
-UPDATE communication SET finalstatus='failed' WHERE command = 'SEND' AND finalstatus is
-null AND status like '%too many%';</p>
+</code></pre></div>
+<h4 id="configure-hylafax-enterprise-with-odbc">Configure HylaFAX Enterprise with ODBC<a class="headerlink" href="#configure-hylafax-enterprise-with-odbc" title="Permanent link">&para;</a></h4>
+<p>Create <code>/var/spool/hylafax/etc/CONFIG/database</code> with the following content:</p>
+<div class="highlight"><pre><span></span><code>DataInitialize:    <span class="s2">&quot;odbc: dsn=hylafax&quot;</span>
+<span class="c1">#DataOption:       &quot;odbc: username=hylafax&quot;</span>
+<span class="c1">#DataOption:       &quot;odbc: password=ee&quot;</span>
+DataSource:        <span class="s2">&quot;FaxRecvInfo: odbc&quot;</span>
+DataSource:        <span class="s2">&quot;FaxAcctInfo: odbc&quot;</span>
+</code></pre></div>
+<p>Afterwards, configure your modem devices to include that file. For example, in
+<code>/var/spool/hylafax/etc/CONFIG/boston</code> add:</p>
+<div class="highlight"><pre><span></span><code>Include:           etc/CONFIG/database
+</code></pre></div>
+<p>Next, restart faxgetty and/or btgetty proccesses in order to connect them to ODBC:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># for i in /var/spool/hylafax/FIFO.*; do echo Q &gt; $i; done</span>
+</code></pre></div>
+<p>If there is an ODBC connection problem, the faxgetty/btgetty processes will fail to start properly. You  can  verify  whether  there  were  errors  while  connecting  to  the  database  by executing: 
+<div class="highlight"><pre><span></span><code><span class="c1"># grep -i odbc /var/log/messages</span>
+</code></pre></div></p>
+<p>If HylaFAX is having difficulty connecting to ODBC, try uncommenting the 'DataOption' lines above. Should  you  need  to  disable  ODBC,  simply  comment  out  the  Include line you added above.</p>
+<h2 id="retrieving-data-from-odbc">Retrieving Data from ODBC<a class="headerlink" href="#retrieving-data-from-odbc" title="Permanent link">&para;</a></h2>
+<p>Here are sample SQL queries for retrieving records from the 'communication' table:
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">tstart</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">commid</span><span class="p">,</span> <span class="n">jobid</span><span class="p">,</span> <span class="n">mailaddr</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">csi</span><span class="p">,</span> <span class="n">npages</span><span class="p">,</span> <span class="n">status</span> <span class="k">FROM</span> <span class="n">communication</span> <span class="k">WHERE</span> <span class="n">dest</span> <span class="o">=</span> <span class="s1">&#39;12155558774&#39;</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="n">tstart</span><span class="p">,</span> <span class="n">commid</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">jobid</span><span class="p">,</span> <span class="n">npages</span><span class="p">,</span> <span class="n">status</span> <span class="k">FROM</span> <span class="n">communication</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">tstart</span> <span class="k">DESC</span> <span class="k">LIMIT</span> <span class="mi">40</span><span class="p">;</span>
+</code></pre></div></p>
+<p>A description of each column can be found in the xferfaxlog manpage.</p>
+<h2 id="populating-the-database">Populating the Database<a class="headerlink" href="#populating-the-database" title="Permanent link">&para;</a></h2>
+<p>You  can  use  the  xferfaxlog2db.php  script  from  http://people.ifax.com/~david/scripts/  to  export  your xferfaxlog  data  into  the  ODBC  database.  Only  records  not  currently  available  in  the  database  will  be created.</p>
+<h2 id="checking-a-jobs-final-status">Checking a job’s final status<a class="headerlink" href="#checking-a-jobs-final-status" title="Permanent link">&para;</a></h2>
+<p>The HylaFAX job 'status' is available in the 'status' column of the 'communication' table. On success, the status field will be empty. A call that ended with an error will report the error in the 'status' column. Please  note  that  the  /var/spool/hylafax/etc/xferfaxlog  data and  the  'communication'  database  table contain call detail records. If you want to know the final status of a job, it’s better to add that column to the database and then update it via the FaxNotify script.</p>
+<p>For example, you’d add the following to <code>/var/spool/hylafax/etc/FaxNotify</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add final status (e.g. &#39;done&#39;, &#39;failed&#39;, etc) to the communication table</span>
+<span class="c1"># See `man notify` for list of statuses</span>
+<span class="nv">DB</span><span class="o">=</span>hylafax
+<span class="nv">USER</span><span class="o">=</span>hylafax
+<span class="nv">PASS</span><span class="o">=</span>ee
+<span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$WHY</span><span class="s2">&quot;</span> <span class="k">in</span>
+  blocked<span class="o">)</span>    <span class="p">;;</span>
+  requeued<span class="o">)</span>   <span class="p">;;</span>
+  *<span class="o">)</span> <span class="nb">echo</span> <span class="s2">&quot;UPDATE communication SET finalstatus=&#39;</span><span class="nv">$WHY</span><span class="s2">&#39; WHERE commid = &#39;</span><span class="nv">$COMMID</span><span class="s2">&#39;&quot;</span> <span class="p">|</span> isql
+<span class="nv">$DB</span> <span class="nv">$USER</span> <span class="nv">$PASS</span>
+   <span class="p">;;</span>
+<span class="k">esac</span>
+</code></pre></div>
+<p>You must apply the following schema change for both PostgreSQL and MariaDB:</p>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">communication</span> <span class="k">ADD</span> <span class="n">finalstatus</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">;</span>
+</code></pre></div>
+<p>You must also apply the following schema change for MariaDB:</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">communication</span> <span class="n">CHANGE</span> <span class="n">tstart</span> <span class="n">tstart</span> <span class="k">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">;</span>
+</code></pre></div>
+Once  you’ve  applied  these  changes,  you’ll  be  able  to  query  the  database  regarding  jobs  where  the finalstatus is not null and get the true final status of the job.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">communication</span> <span class="k">WHERE</span> <span class="n">command</span> <span class="o">=</span> <span class="s1">&#39;SEND&#39;</span> <span class="k">AND</span> <span class="n">finalstatus</span> <span class="k">is</span> <span class="k">not</span> <span class="k">null</span><span class="p">;</span>
+</code></pre></div>
+<p>You can use the following queries to retroactively set the finalstatus column:</p>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span> <span class="n">communication</span> <span class="k">SET</span> <span class="n">finalstatus</span><span class="o">=</span><span class="s1">&#39;done&#39;</span> <span class="k">WHERE</span> <span class="n">command</span> <span class="o">=</span> <span class="s1">&#39;SEND&#39;</span> <span class="k">AND</span> <span class="n">finalstatus</span> <span class="k">is</span> <span class="k">null</span> <span class="k">AND</span> <span class="n">status</span> <span class="k">is</span> <span class="k">null</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="n">communication</span> <span class="k">SET</span> <span class="n">finalstatus</span><span class="o">=</span><span class="s1">&#39;failed&#39;</span> <span class="k">WHERE</span> <span class="n">command</span> <span class="o">=</span> <span class="s1">&#39;SEND&#39;</span> <span class="k">AND</span> <span class="n">finalstatus</span> <span class="k">is</span> <span class="k">null</span> <span class="k">AND</span> <span class="n">status</span> <span class="k">like</span> <span class="s1">&#39;%too many%&#39;</span><span class="p">;</span>
+</code></pre></div>
 
               
             </article>
